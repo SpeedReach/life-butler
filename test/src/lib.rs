@@ -2,10 +2,6 @@
 #![allow(unused)]
 #![feature(async_fn_in_trait)]
 
+mod binary;
 
-use life_butler::start;
 
-#[tokio::main]
-async fn main() {
-    start();
-}
