@@ -17,8 +17,6 @@ pub async fn start() {
 
     print!("listening on {}", addr);
 
-
-
     axum::Server::bind(&addr)
         .serve(main_route.into_make_service())
         .await

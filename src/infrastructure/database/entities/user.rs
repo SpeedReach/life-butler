@@ -14,7 +14,7 @@ impl User{
 
     pub fn new(email: String,password: String)->User{
         return User{
-            id: Uuid::new_v4().to_string(),
+            id: ObjectId::new().to_string(),
             email,
             password
         }

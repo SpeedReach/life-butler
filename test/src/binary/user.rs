@@ -9,6 +9,7 @@ mod user{
     use life_butler::infrastructure::error::OperationError;
     use life_butler::infrastructure::repositories::user::user_repository::UserRepository;
     use mongodb::results::DeleteResult;
+    use crate::binary::setup;
 
     static TEST_EMAIL: &str = "brian030128@gmail.com";
 
@@ -22,7 +23,7 @@ mod user{
 
     #[tokio::test]
     pub async fn create_delete(){
-        let modules = Modules::new().await;
+        let modules = setup().await;
         delete_user_email(&modules.repositories.user_repository).await;
         let create_res_1= create_user(&modules.repositories.user_repository).await;
         assert!(create_res_1.is_ok(), "failed creating user");

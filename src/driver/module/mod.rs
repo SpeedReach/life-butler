@@ -1,3 +1,4 @@
+use std::fmt::format;
 use std::sync::Arc;
 use crate::infrastructure::database::database_service::{DatabaseConfig, DatabaseDriver};
 use crate::infrastructure::modules::RepositoriesModule;
@@ -8,8 +9,8 @@ pub struct Modules{
 
 impl Modules{
 
-    pub async fn new()->Modules {
-        let driver = Arc::new(DatabaseDriver::new(DatabaseConfig::new("mongodb+srv://brian920128:password@cluster0.hek6yds.mongodb.net/?retryWrites=true&w=majority".to_owned(), "life-butler"))
+    pub async fn new(password: &str)->Modules {
+        let driver= Arc::new(DatabaseDriver::new(DatabaseConfig::new(format!("mongodb+srv://brian920128:{password:?}@cluster0.hek6yds.mongodb.net/?retryWrites=true&w=majority"), "life-butler"))
             .await
             .unwrap());
         let repositories = RepositoriesModule::new(driver);
@@ -18,5 +19,4 @@ impl Modules{
             repositories,
         }
     }
-
 }
