@@ -8,7 +8,7 @@ use mongodb::IndexModel;
 use mongodb::options::IndexOptions;
 use crate::infrastructure::database::database_service::DatabaseDriver;
 
-pub mod create_user;
+pub mod insert_user;
 pub mod delete_email_user;
 
 

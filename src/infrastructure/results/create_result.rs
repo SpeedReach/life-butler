@@ -1,7 +1,7 @@
 
 
 #[derive(Clone, Debug, PartialEq)]
-pub enum CreateResult<T>{
+pub enum InsertResult<T>{
     AlreadyExists(String),
     Success(T)
 }

@@ -14,7 +14,7 @@ impl Modules{
             .await
             .unwrap());
         let repositories = RepositoriesModule::new(driver).await;
-
+        
         Self{
             repositories,
         }

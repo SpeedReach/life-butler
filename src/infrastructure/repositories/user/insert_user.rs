@@ -11,17 +11,16 @@ use crate::infrastructure::database::entities::user::User;
 use crate::infrastructure::error::DatabaseError;
 use super::*;
 use crate::infrastructure::repositories::user::UserRepository;
-use crate::infrastructure::results::create_result::CreateResult;
+use crate::infrastructure::results::create_result::InsertResult;
 
 
-pub trait CreateUserRepository{
-    async fn create_user(&self, email: String, password: String) -> Result<CreateResult<User>,Report<DatabaseError>>;
+pub trait InsertUserRepository {
+    async fn insert_user(&self, user: User) -> Result<InsertResult<User>,Report<DatabaseError>>;
 }
 
-impl CreateUserRepository for UserRepository {
+impl InsertUserRepository for UserRepository {
 
-    async fn create_user(&self, email: String, password: String) -> Result<CreateResult<User>, Report<DatabaseError>> {
-        let user = User::new(email.clone(),password);
+    async fn insert_user(&self, user: User) -> Result<InsertResult<User>, Report<DatabaseError>> {
 
         let collection = self.get_collection();
 
@@ -32,7 +31,7 @@ impl CreateUserRepository for UserRepository {
             if let ErrorKind::Write(write_failure) = *err.clone().kind {
                 if let WriteFailure::WriteError(error) = write_failure{
                     if error.code == 11000 {
-                        return Ok(CreateResult::AlreadyExists(email.clone()));
+                        return Ok(InsertResult::AlreadyExists(user.email.clone()));
                     }
                 }
             }
@@ -41,6 +40,6 @@ impl CreateUserRepository for UserRepository {
             }
         }
 
-        Ok(CreateResult::Success(user))
+        Ok(InsertResult::Success(user))
     }
 }
