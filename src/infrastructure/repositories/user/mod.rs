@@ -10,8 +10,9 @@ use crate::infrastructure::database::database_service::DatabaseDriver;
 
 pub mod insert_user;
 pub mod delete_email_user;
+pub mod user_login;
 
-
+#[derive(Clone, Debug)]
 pub struct UserRepository {
     driver: Arc<DatabaseDriver>,
     database_id: String,

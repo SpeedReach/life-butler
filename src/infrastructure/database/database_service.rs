@@ -14,6 +14,7 @@ impl DatabaseConfig {
     }
 }
 
+#[derive(Clone, Debug)]
 pub struct DatabaseDriver {
     config: DatabaseConfig,
     client: Client,
