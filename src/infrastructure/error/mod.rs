@@ -3,21 +3,14 @@ use std::fmt::{Display, Write};
 use error_stack::{Context, Report};
 
 #[derive(Debug, Clone)]
-pub enum OperationError{
-    InvalidOperation(String),
-    InternalError
-}
+pub struct DatabaseError;
 
-
-impl Display for OperationError {
+impl Display for DatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            OperationError::InvalidOperation(info) => write!(f, "{}", info),
-            OperationError::InternalError => f.write_str("An internal error occurred while executing this operation")
-        }
+        write!(f, "An database error occurred ")
     }
 }
 
-impl Context for OperationError {
+impl Context for DatabaseError {
 
 }

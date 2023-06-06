@@ -10,10 +10,10 @@ pub struct Modules{
 impl Modules{
 
     pub async fn new(password: &str)->Modules {
-        let driver= Arc::new(DatabaseDriver::new(DatabaseConfig::new(format!("mongodb+srv://brian920128:{password:?}@cluster0.hek6yds.mongodb.net/?retryWrites=true&w=majority"), "life-butler"))
+        let driver= Arc::new(DatabaseDriver::new(DatabaseConfig::new(format!("mongodb+srv://brian920128:{}@cluster0.hek6yds.mongodb.net/?retryWrites=true&w=majority",password), "life-butler"))
             .await
             .unwrap());
-        let repositories = RepositoriesModule::new(driver);
+        let repositories = RepositoriesModule::new(driver).await;
 
         Self{
             repositories,

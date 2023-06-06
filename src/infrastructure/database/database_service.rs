@@ -21,6 +21,7 @@ pub struct DatabaseDriver {
 
 impl DatabaseDriver {
     pub async fn new(config: DatabaseConfig) -> Result<DatabaseDriver, Error> {
+        println!("connecting with {}", &config.connect_id);
         let mut client_options = ClientOptions::parse(&config.connect_id).await?;
 
         let server_api = ServerApi::builder().version(ServerApiVersion::V1).build();
