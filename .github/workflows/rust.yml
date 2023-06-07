@@ -20,4 +20,4 @@ jobs:
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-    - run: ssh -t root@143.198.208.44 -l root 'whoami; bash -l'
+    - run: ssh -t root@143.198.208.44 'mkdir test'
