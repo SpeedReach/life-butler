@@ -28,7 +28,7 @@ jobs:
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
     - name: Build Container Image
-      run: life-butler % docker build -t registry.digitalocean.com/test-registries/life-butler .
+      run: docker build -t registry.digitalocean.com/test-registries/life-butler .
     - name: Login Container Registry
       run: doctl registry login --expiry-seconds 600
     - name: Push image to DigitalOcean Container Registry
