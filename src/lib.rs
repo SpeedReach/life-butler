@@ -1,5 +1,4 @@
 #![allow(dead_code)]
-#![feature(error_reporter)]
 #![allow(unused)]
 
 use std::net::SocketAddr;

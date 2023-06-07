@@ -1,5 +1,5 @@
 ### Send POST request with json body
-POST localhost:8080/user/register
+POST http://localhost:8080/user/register
 Content-Type: application/json
 
 {
@@ -7,10 +7,11 @@ Content-Type: application/json
   "password": "12321445"
 }
 ###
-POST localhost:8080/user/login
+POST 0.0.0.0:8080/user/login
 Content-Type: application/json
 
 {
   "email": "brian030128@gmail.com",
   "password": "12321445"
 }
+
