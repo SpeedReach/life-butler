@@ -28,7 +28,7 @@ jobs:
       with:
         host: 143.198.208.44
         username: root
-        password: ""
+        password: 
         script: whoami
 
 
