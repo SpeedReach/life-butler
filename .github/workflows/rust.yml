@@ -20,5 +20,9 @@ jobs:
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+    - name: create ssh file
+      run: touch id_rsa.pub
+    - name: write key to it
+      run: echo ${{ secrets.SSH_KEY }} >> id_rsa.pub
     - name: pull and execute
-      run: doctl compute ssh 357712721 --ssh-command "docker pull registry.digitalocean.com/test-registries/life-butler;docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butler"
+      run: doctl compute ssh 357712721 --ssh-key-path "id_ras.pub" --ssh-command "docker pull registry.digitalocean.com/test-registries/life-butler;docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butler"
