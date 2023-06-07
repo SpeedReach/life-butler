@@ -11,7 +11,7 @@ use crate::infrastructure::results::insert_result::InsertResult;
 
 
 pub struct RegisterUserUseCase{
-    repository: Arc<UserRepository>,
+    repository: Arc<dyn InsertUserRepository + Sync + Send>,
 }
 
 #[derive(Debug,Clone)]

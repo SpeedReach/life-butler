@@ -1,5 +1,6 @@
 use std::error::Error;
 use std::fmt::{Display, Formatter};
+use axum::async_trait;
 use error_stack::{IntoReport, Report, ResultExt};
 use mongodb::bson::doc;
 use mongodb::Collection;
@@ -8,11 +9,12 @@ use crate::infrastructure::error::DatabaseError;
 use crate::infrastructure::repositories::user::UserRepository;
 use crate::infrastructure::results::delete_result::DeleteResult;
 
-
+#[async_trait]
 pub trait DeleteEmailUserRepository {
     async fn delete_email_user(&self, email: String) -> Result<DeleteResult, Report<DatabaseError>>;
 }
 
+#[async_trait]
 impl DeleteEmailUserRepository for UserRepository{
     async fn delete_email_user(&self, email: String) -> Result<DeleteResult, Report<DatabaseError>> {
         let database=self.driver.get_database();

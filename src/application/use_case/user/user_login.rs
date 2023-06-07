@@ -14,7 +14,7 @@ use crate::infrastructure::results::login_result::LoginResult;
 
 
 pub struct UserLoginUseCase{
-    repository: Arc<UserRepository>,
+    repository: Arc<dyn FindEmailUserRepository +Sync+ Send>,
 }
 
 #[derive(Debug, Clone)]

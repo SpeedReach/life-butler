@@ -18,7 +18,7 @@ pub enum DeleteEmailUserError{
 }
 
 pub struct DeleteEmailUserUseCase{
-    repository: Arc<UserRepository>
+    repository: Arc<dyn DeleteEmailUserRepository+Sync+Send>
 }
 
 impl Display for DeleteEmailUserError {

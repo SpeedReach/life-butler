@@ -1,5 +1,6 @@
 use std::error::Error;
 use std::fmt::{Display, Formatter};
+use axum::async_trait;
 use error_stack::{ IntoReport, Report, ResultExt};
 use futures::future::err;
 use mongodb::{ClientSession, Collection};
@@ -13,11 +14,12 @@ use super::*;
 use crate::infrastructure::repositories::user::UserRepository;
 use crate::infrastructure::results::insert_result::InsertResult;
 
-
+#[async_trait]
 pub trait InsertUserRepository {
     async fn insert_user(&self, user: User) -> Result<InsertResult<User>,Report<DatabaseError>>;
 }
 
+#[async_trait]
 impl InsertUserRepository for UserRepository {
 
     async fn insert_user(&self, user: User) -> Result<InsertResult<User>, Report<DatabaseError>> {
