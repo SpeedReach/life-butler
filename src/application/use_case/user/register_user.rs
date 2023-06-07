@@ -7,7 +7,7 @@ use error_stack::{Context, Report, ResultExt};
 use crate::infrastructure::database::entities::user::User;
 use crate::infrastructure::repositories::user::insert_user::InsertUserRepository;
 use crate::infrastructure::repositories::user::UserRepository;
-use crate::infrastructure::results::create_result::InsertResult;
+use crate::infrastructure::results::insert_result::InsertResult;
 
 
 pub struct RegisterUserUseCase{
