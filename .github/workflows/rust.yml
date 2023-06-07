@@ -19,6 +19,7 @@ jobs:
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+    - run: pwd
     - name: create ssh file
       run: touch /home/id_rsa
     - name: write key to it
