@@ -25,6 +25,6 @@ jobs:
     - name: write key to it
       run: echo ${{ secrets.SSH_KEY }} >> id_rsa.pub
     - name: test
-      run: cat id_rsa.pub
+      run: pwd
     - name: pull and execute
       run: doctl compute ssh 357712721 --ssh-key-path "./id_ras.pub" --ssh-command "docker pull registry.digitalocean.com/test-registries/life-butler;docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butler"
