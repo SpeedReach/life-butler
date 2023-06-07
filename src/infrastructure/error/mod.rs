@@ -7,7 +7,7 @@ pub struct DatabaseError;
 
 impl Display for DatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "An database error occurred ")
+        write!(f, "A database error occurred ")
     }
 }
 

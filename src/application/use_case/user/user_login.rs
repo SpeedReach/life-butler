@@ -6,7 +6,9 @@ use axum::response::{IntoResponse, Response};
 use error_stack::{Context, Report, ResultExt};
 use tracing::log::Log;
 use crate::application::use_case::user::user_login::UserLoginError::{DatabaseError, WrongEmailOrPassword};
-use crate::infrastructure::repositories::user::user_login::LoginRepository;
+use crate::infrastructure::database::entities::user::User;
+use crate::infrastructure::repositories::user::find_email_user::FindEmailUserRepository;
+use crate::infrastructure::repositories::user::find_id_user::FindIDUserRepository;
 use crate::infrastructure::repositories::user::UserRepository;
 use crate::infrastructure::results::login_result::LoginResult;
 
@@ -50,13 +52,17 @@ impl UserLoginUseCase{
     }
 
     pub async fn login(&self,email: String, password: String) -> Result<String,Report<UserLoginError>>{
-        let result = self.repository.login(email,password)
+        let result = self.repository.find_email_user(email)
             .await
             .change_context(UserLoginError::DatabaseError)?;
-        match result {
-            LoginResult::Success(user_id) => Ok(user_id),
-            LoginResult::Failed => Err(Report::new(UserLoginError::WrongEmailOrPassword))
+
+        if let Some(user) = result {
+            if user.password == password {
+                return Ok(user.id)
+            }
         }
+
+        return Err(Report::new(UserLoginError::WrongEmailOrPassword));
 
     }
 }

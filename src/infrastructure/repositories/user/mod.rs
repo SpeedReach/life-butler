@@ -10,7 +10,8 @@ use crate::infrastructure::database::database_service::DatabaseDriver;
 
 pub mod insert_user;
 pub mod delete_email_user;
-pub mod user_login;
+pub mod find_id_user;
+pub mod find_email_user;
 
 #[derive(Clone, Debug)]
 pub struct UserRepository {
