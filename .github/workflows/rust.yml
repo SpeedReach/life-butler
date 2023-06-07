@@ -1,11 +1,6 @@
 name: Rust
 
-on:
-  workflow_dispatch:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: workflow_dispatch
 
 env:
   CARGO_TERM_COLOR: always
