@@ -21,8 +21,8 @@ jobs:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
     - run: pwd
     - name: create ssh file
-      run: touch /home/id_rsa
+      run: touch /home/runner/work/life-butler/life-butler/id_rsa
     - name: write key to it
-      run: echo ${{ secrets.SSH_KEY }} >> /home/id_rsa
+      run: echo ${{ secrets.SSH_KEY }} >> /home/runner/work/life-butler/life-butler/id_rsa
     - name: pu
-      run: doctl compute ssh 357712721 --ssh-key-path "/home/id_rsa" --ssh-command "docker pull registry.digitalocean.com/test-registries/life-butler;docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butler"
+      run: doctl compute ssh 357712721 --ssh-key-path "/home/runner/work/life-butler/life-butler/id_rsa" --ssh-command "docker pull registry.digitalocean.com/test-registries/life-butler;docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butler"
