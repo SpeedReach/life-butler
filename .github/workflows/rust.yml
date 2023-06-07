@@ -16,10 +16,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
     - name: SSH Remote Commands
       uses: appleboy/ssh-action@v0.1.10
       with:
-        host: 143.198.208.44
-        username: root
+        host: root@143.198.208.44
         key: ${{ secrets.SSH_KEY }}
         script: whoami
