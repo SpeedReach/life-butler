@@ -25,14 +25,19 @@ mod user{
     #[tokio::test]
     pub async fn create_delete() -> Result<(), Report<TestError>>{
         let modules = setup().await;
-        delete_user_email(modules).await.change_context(TestError{})?;
-        let create_res_1= create_user(&modules).await.change_context(TestError {})?;
-
-
-        let create_res_2 = create_user(&modules).await.change_context(TestError{})?;
-
-
-        let del_res_1=delete_user_email(&modules).await.change_context(TestError{})?;
+        let _ = delete_user_email(modules).await.change_context(TestError{});
+        
+        create_user(&modules).await.change_context(TestError {})?;
+        
+        let create_res_2 = create_user(&modules).await.change_context(TestError{});
+        
+        match create_res_2 {
+            Ok(_) => panic!("should not be able to create another user with same password"),
+            Err(_) => {},
+        }
+        
+        delete_user_email(&modules).await.change_context(TestError)?;
+        
         Ok(())
     }
 
