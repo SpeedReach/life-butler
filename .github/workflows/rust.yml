@@ -19,14 +19,12 @@ jobs:
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-    - name: Update deployment file
-      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<IMAGE>|registry.digitalocean.com/test-registries/life-butler:'${TAG}'|' $GITHUB_WORKSPACE/config/deployment.yml
-
-    - name: Save DigitalOcean kubeconfig with short-lived credentials
-      run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s
-
-    - name: Deploy to DigitalOcean Kubernetes
-      run: kubectl apply -f $GITHUB_WORKSPACE/config/deployment.yml
-
-    - name: Verify deployment
-      run: kubectl rollout status deployment/life-butler
+    - name: ssh pull docker and start
+    uses: appleboy/ssh-action@v0.1.10
+    with:
+      host: 165.232.170.167
+      username: root
+      password: ${{ secrets.MONGODB_PASSWORD }}
+      script: |
+        docker pull registry.digitalocean.com/test-registries/life-butler
+        docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butle
