@@ -20,7 +20,7 @@ jobs:
     - name: Build
       run: cargo build --verbose
     - name: Run tests
-      run: cargo test -- --${{ secrets.MONGODB_PASSWORD }}
+      run: cargo test test -- ${{ secrets.MONGODB_PASSWORD }}
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
       with:

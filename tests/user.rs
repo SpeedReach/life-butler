@@ -23,7 +23,7 @@ mod user{
     }
 
     #[tokio::test]
-    pub async fn create_delete() -> Result<(), Report<TestError>>{
+    pub async fn create_delete_test() -> Result<(), Report<TestError>>{
         let modules = setup().await;
         let _ = delete_user_email(modules).await.change_context(TestError{});
         

@@ -11,8 +11,8 @@ static MODULES: OnceCell<Modules> = OnceCell::const_new();
 pub async fn setup() -> &'static Modules{
 
     return MODULES.get_or_init( || async {
-        let arg = std::env::args().nth(1).expect("enter password: cargo test -- --<PassWord>");
-        let password = &arg.clone()[2..];
+        let arg = std::env::args().nth(2).expect("enter password: cargo test test <PASSWORD>");
+        let password = &arg.clone();
         Modules::new(password).await
     }).await;
 }
