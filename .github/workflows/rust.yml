@@ -1,6 +1,6 @@
 name: Rust
 
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 
 env:
   CARGO_TERM_COLOR: always
@@ -12,17 +12,21 @@ jobs:
     strategy:
       matrix:
         toolchain:
-          - nightly
+          - stable
 
     steps:
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-    - run: pwd
-    - name: create ssh file
-      run: touch /home/runner/work/life-butler/life-butler/id_rsa
-    - name: write key to it
-      run: echo ${{ secrets.SSH_KEY }} >> /home/runner/work/life-butler/life-butler/id_rsa
-    - name: pu
-      run: doctl compute ssh 357712721 --ssh-key-path "/home/runner/work/life-butler/life-butler/id_rsa" --ssh-command "docker pull registry.digitalocean.com/test-registries/life-butler;docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butler"
+    - name: Update deployment file
+      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<IMAGE>|registry.digitalocean.com/test-registries/life-butler:'${TAG}'|' $GITHUB_WORKSPACE/config/deployment.yml
+
+    - name: Save DigitalOcean kubeconfig with short-lived credentials
+      run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 k8s
+
+    - name: Deploy to DigitalOcean Kubernetes
+      run: kubectl apply -f $GITHUB_WORKSPACE/config/deployment.yml
+
+    - name: Verify deployment
+      run: kubectl rollout status deployment/life-butler
