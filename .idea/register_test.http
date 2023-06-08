@@ -1,17 +1,17 @@
 ### Send POST request with json body
-POST http://localhost:8080/user/register
+POST 165.232.170.167:8080/user/register
 Content-Type: application/json
 
 {
-  "email": "brian030128@gmail.com",
-  "password": "12321445"
+  "email": "110703065@gmail.com",
+  "password": "123456"
 }
 ###
-POST 0.0.0.0:8080/user/login
+POST 165.232.170.167:8080/user/login
 Content-Type: application/json
 
 {
-  "email": "brian030128@gmail.com",
-  "password": "12321445"
+  "email": "110703065@gmail.com",
+  "password": "123456"
 }
 

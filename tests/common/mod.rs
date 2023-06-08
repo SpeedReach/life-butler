@@ -9,9 +9,11 @@ static MODULES: OnceCell<Modules> = OnceCell::const_new();
 
 
 pub async fn setup() -> &'static Modules{
+
     return MODULES.get_or_init( || async {
-        let password = String::from("M9VWh2oRhEbUNjBx");
-        Modules::new(password.as_str()).await
+        let arg = std::env::args().nth(1).expect("enter password: cargo test -- --<PassWord>");
+        let password = &arg.clone()[2..];
+        Modules::new(password).await
     }).await;
 }
 
