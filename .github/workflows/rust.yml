@@ -27,4 +27,4 @@ jobs:
         password: ${{ secrets.MONGODB_PASSWORD }}
         script: |
           docker pull registry.digitalocean.com/test-registries/life-butler
-          docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butle
+          docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butler
