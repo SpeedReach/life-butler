@@ -9,8 +9,16 @@ use crate::driver::routes::user_routes::{register_user, user_login};
 static MONGO_PASSWD: &str = "MONGO_PASSWD";
 
 pub async fn start() {
-    let password = std::env::var(MONGO_PASSWD).unwrap_or(String::from("M9VWh2oRhEbUNjBx"));
-    let modules = Arc::new(Modules::new(&password).await);
+    let env_passwd = std::env::var(MONGO_PASSWD);
+    let mut password: Option<String> = Option::None;
+    if let Ok(pwd) = env_passwd{
+        password = Some(pwd)
+    }
+    else {
+        password = std::env::args().nth(1);
+    }
+    let password = password.expect("database password not set \"cargo run <MONGODB_PASSWORD>\" ");
+    let modules = Arc::new(Modules::new(password.as_str()).await);
 
     let user_route = Router::new()
         .route("/",get(register_user))
