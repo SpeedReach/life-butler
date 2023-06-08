@@ -20,11 +20,11 @@ jobs:
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
     - name: ssh pull docker and start
-    uses: appleboy/ssh-action@v0.1.10
-    with:
-      host: 165.232.170.167
-      username: root
-      password: ${{ secrets.MONGODB_PASSWORD }}
-      script: |
-        docker pull registry.digitalocean.com/test-registries/life-butler
-        docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butle
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: 165.232.170.167
+        username: root
+        password: ${{ secrets.MONGODB_PASSWORD }}
+        script: |
+          docker pull registry.digitalocean.com/test-registries/life-butler
+          docker run -p 8080:8080 -e MONGO_PASSWD="${{ secrets.MONGODB_PASSWORD }}" registry.digitalocean.com/test-registries/life-butle
