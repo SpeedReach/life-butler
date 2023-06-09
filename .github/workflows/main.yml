@@ -1,4 +1,4 @@
-name: Rust
+name: main
 
 on: [workflow_dispatch, push]
 
