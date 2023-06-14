@@ -36,6 +36,6 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: root
-        password: 12345678
+        password: ${{ secrets.DIGITAL_PASSWORD }}
         script: |
           ./start.sh
