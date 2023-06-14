@@ -22,25 +22,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133543.200.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/login_test.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_6_8__04_53__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_6_8_下午_04_53_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/user/delete_email_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/delete_email_user.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/user/register_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/register_user.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/user/user_login.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/user_login.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/bootstrap.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/bootstrap.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/models/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/models/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/models/register_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/models/register_user.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/models/response.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/models/user_login.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/models/user_login.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/common/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/binary_tests.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,12 +134,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686725245340</updated>
-      <workItem from="1686725247743" duration="3171000" />
+      <workItem from="1686725247743" duration="4537000" />
     </task>
+    <task id="LOCAL-00001" summary="add title for responses">
+      <created>1686728587063</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686728587063</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add title for responses" />
+    <option name="LAST_COMMIT_MESSAGE" value="add title for responses" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -36,6 +36,6 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: root
-        password: ${{ secrets.MONGODB_PASSWORD }}
+        password: ${{ secrets.DIGITAL_PASSWORD }}
         script: |
           ./start.sh
