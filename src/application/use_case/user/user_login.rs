@@ -23,6 +23,8 @@ pub enum UserLoginError {
     WrongEmailOrPassword
 }
 
+
+
 impl Display for UserLoginError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {

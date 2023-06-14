@@ -1,29 +1,29 @@
 use axum::http::StatusCode;
-use axum::Json;
 use axum::response::{IntoResponse, Response};
+use axum::Json;
 use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize,Debug)]
+use super::response::HttpResponse;
+
+#[derive(Deserialize, Debug)]
 pub struct UserLoginRequest {
     pub email: String,
-    pub password: String
+    pub password: String,
 }
 
-#[derive(Serialize, Debug, Clone,)]
-pub struct UserLoginResponse{
-    user_id: String
+#[derive(Serialize)]
+pub struct UserLoginResponse {
+    user_id: String,
 }
 
-impl UserLoginResponse{
-    pub fn new(user_id: String)->Self{
-        Self{
-            user_id
-        }
+impl UserLoginResponse {
+    pub fn new(user_id: String) -> Self {
+        Self { user_id }
     }
 }
 
-impl IntoResponse for UserLoginResponse {
+impl IntoResponse for HttpResponse<UserLoginResponse> {
     fn into_response(self) -> Response {
-        (StatusCode::OK,Json(self)).into_response()
+        (StatusCode::OK, Json(self)).into_response()
     }
 }

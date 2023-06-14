@@ -1,0 +1,181 @@
+Index: src/driver/bootstrap.rs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>use std::net::SocketAddr;\r\nuse std::sync::Arc;\r\nuse axum::middleware::AddExtension;\r\nuse axum::{Extension, Router};\r\nuse axum::routing::{get, post};\r\nuse crate::driver::module::Modules;\r\nuse crate::driver::routes::user_routes::{register_user, user_login};\r\n\r\nstatic MONGO_PASSWD: &str = \"MONGO_PASSWD\";\r\n\r\npub async fn start() {\r\n    let password = std::env::var(MONGO_PASSWD).unwrap_or(String::from(\"M9VWh2oRhEbUNjBx\"));\r\n    let modules = Arc::new(Modules::new(&password).await);\r\n\r\n    let user_route = Router::new()\r\n        .route(\"/\",get(register_user))\r\n        .route(\"/register\",post(register_user))\r\n        .route(\"/login\",post(user_login));\r\n\r\n\r\n    let main_route = Router::new()\r\n        .route(\"/\",get(user_login))\r\n        .nest(\"/user\",user_route)\r\n        .layer(Extension(Arc::clone(&modules)));\r\n\r\n\r\n    let addr = SocketAddr::from(([0, 0, 0, 0], 8080));\r\n\r\n    println!(\"listening on {}\", addr);\r\n\r\n    axum::Server::bind(&addr)\r\n        .serve(main_route.into_make_service())\r\n        .await\r\n        .unwrap();\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/driver/bootstrap.rs b/src/driver/bootstrap.rs
+--- a/src/driver/bootstrap.rs	(revision 09c37e6aebb9195207646058bb7195626e1fb686)
++++ b/src/driver/bootstrap.rs	(date 1686214224326)
+@@ -9,8 +9,16 @@
+ static MONGO_PASSWD: &str = "MONGO_PASSWD";
+ 
+ pub async fn start() {
+-    let password = std::env::var(MONGO_PASSWD).unwrap_or(String::from("M9VWh2oRhEbUNjBx"));
+-    let modules = Arc::new(Modules::new(&password).await);
++    let env_passwd = std::env::var(MONGO_PASSWD);
++    let mut password: Option<String> = Option::None;
++    if let Ok(pwd) = env_passwd{
++        password = Some(pwd)
++    }
++    else {
++        password = std::env::args().nth(1);
++    }
++    let password = password.expect("database password not set \"cargo run <MONGODB_PASSWORD>\" ");
++    let modules = Arc::new(Modules::new(password.as_str()).await);
+ 
+     let user_route = Router::new()
+         .route("/",get(register_user))
+Index: .idea/httpRequests/http-requests-log.http
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>POST http://0.0.0.0:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-07T234101.200.json\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-07T233227.200.json\r\n\r\n###\r\n\r\nPOST http://0.0.0.0:8080\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-07T232748.200.json\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-07T232747.200.json\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080\r\nContent-Type: application/json\r\nContent-Length: 60\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n\"email\": \"brian030128@gmail.com\",\r\n\"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-07T232150.200.json\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080\r\nContent-Type: application/json\r\nContent-Length: 60\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n\"email\": \"brian030128@gmail.com\",\r\n\"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080\r\nContent-Type: application/json\r\nContent-Length: 60\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n\"email\": \"brian030128@gmail.com\",\r\n\"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080\r\nContent-Type: application/json\r\nContent-Length: 60\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n\"email\": \"brian030128@gmail.com\",\r\n\"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://127.0.0.1:8080\r\nContent-Type: application/json\r\nContent-Length: 60\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n\"email\": \"brian030128@gmail.com\",\r\n\"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/register\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-07T231743.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-06T230438.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/register\r\nContent-Type: application/json\r\nContent-Length: 63\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian03012@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-06T225601.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/login\r\nContent-Length: 64\r\nContent-Type: */*; charset=UTF-8\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-06T225317.415.txt\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/register\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-06T222433.403.txt\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/register\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n<> 2023-06-06T222146.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080\r\nContent-Type: application/json\r\nContent-Length: 64\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n###\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/httpRequests/http-requests-log.http b/.idea/httpRequests/http-requests-log.http
+--- a/.idea/httpRequests/http-requests-log.http	(revision 09c37e6aebb9195207646058bb7195626e1fb686)
++++ b/.idea/httpRequests/http-requests-log.http	(date 1686213668740)
+@@ -1,3 +1,115 @@
++POST http://165.232.170.167:8080/user/login
++Content-Type: application/json
++Content-Length: 64
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "email": "brian030128@gmail.com",
++  "password": "12321445"
++}
++
++<> 2023-06-08T164102.200.json
++
++###
++
++POST http://165.232.170.167:8080/user/register
++Content-Type: application/json
++Content-Length: 64
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "email": "brian030128@gmail.com",
++  "password": "12321445"
++}
++
++<> 2023-06-08T164051.403.txt
++
++###
++
++POST http://165.232.170.167:8080/user/register
++Content-Type: application/json
++Content-Length: 64
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "email": "brian030128@gmail.com",
++  "password": "12321445"
++}
++
++<> 2023-06-08T164044.200.json
++
++###
++
++POST http://165.232.170.167:8080/user/login
++Content-Type: application/json
++Content-Length: 64
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "email": "brian030128@gmail.com",
++  "password": "12321445"
++}
++
++<> 2023-06-08T164025.401.txt
++
++###
++
++POST http://165.232.170.167:8080/user/login
++Content-Type: application/json
++Content-Length: 64
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "email": "brian030128@gmail.com",
++  "password": "12321445"
++}
++
++<> 2023-06-08T120425.401.txt
++
++###
++
++POST http://165.232.170.167:8080/user/login
++Content-Type: application/json
++Content-Length: 64
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "email": "brian030128@gmail.com",
++  "password": "12321445"
++}
++
++<> 2023-06-08T120217.401.txt
++
++###
++
++POST http://165.232.170.167:8080/user/login
++Content-Type: application/json
++Content-Length: 64
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "email": "brian030128@gmail.com",
++  "password": "12321445"
++}
++
++<> 2023-06-08T120125.401.txt
++
++###
++
+ POST http://0.0.0.0:8080/user/login
+ Content-Type: application/json
+ Content-Length: 64
+Index: .idea/register_test.http
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>### Send POST request with json body\r\nPOST http://localhost:8080/user/register\r\nContent-Type: application/json\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n###\r\nPOST 0.0.0.0:8080/user/login\r\nContent-Type: application/json\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"12321445\"\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/register_test.http b/.idea/register_test.http
+--- a/.idea/register_test.http	(revision 09c37e6aebb9195207646058bb7195626e1fb686)
++++ b/.idea/register_test.http	(date 1686213662635)
+@@ -1,5 +1,5 @@
+ ### Send POST request with json body
+-POST http://localhost:8080/user/register
++POST 165.232.170.167:8080/user/register
+ Content-Type: application/json
+ 
+ {
+@@ -7,7 +7,7 @@
+   "password": "12321445"
+ }
+ ###
+-POST 0.0.0.0:8080/user/login
++POST 165.232.170.167:8080/user/login
+ Content-Type: application/json
+ 
+ {

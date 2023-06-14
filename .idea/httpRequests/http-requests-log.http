@@ -1,0 +1,192 @@
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 56
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "110703065@gmail.com",
+"password": "123456"
+}
+
+<> 2023-06-14T133543.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "1107030622@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T133440.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "11070306@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T133426.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "11070306@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T133420.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "11070306@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T132301.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "11070306@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T132243.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "11070306@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T132052.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 59
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "11070306@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T132028.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "110703065@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T131911.200.json
+
+###
+
+POST http://165.232.170.167:8080/user/register
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "110703065@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T131853.403.txt
+
+###
+
+POST http://165.232.170.167:8080/user/login
+Content-Type: application/json
+Content-Length: 60
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "110703065@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-14T113850.200.json
+
+###
+
+POST http://165.232.170.167:8080/user/login
+Content-Type: application/json
+Content-Length: 44
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "aa",
+  "password": "1234567"
+}
+
+<> 2023-06-14T113518.401.txt
+
+###
+

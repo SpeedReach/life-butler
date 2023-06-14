@@ -15,10 +15,13 @@ pub async fn setup() -> &'static Modules{
         let password = &arg.clone();
         Modules::new(password).await
     }).await;
+
 }
+
 
 #[derive(Debug,Clone)]
 pub struct TestError;
+
 
 impl Display for TestError{
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
@@ -26,7 +29,9 @@ impl Display for TestError{
     }
 }
 
+
 impl Context for TestError{
     
 }
+
 

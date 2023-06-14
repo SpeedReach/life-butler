@@ -1,36 +1,37 @@
-use std::net::SocketAddr;
-use std::sync::Arc;
-use axum::middleware::AddExtension;
-use axum::{Extension, Router};
-use axum::routing::{get, post};
 use crate::driver::module::Modules;
 use crate::driver::routes::user_routes::{register_user, user_login};
+use axum::middleware::AddExtension;
+use axum::routing::{get, post};
+use axum::{Extension, Router};
+use std::net::SocketAddr;
+use std::sync::Arc;
+use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
 static MONGO_PASSWD: &str = "MONGO_PASSWD";
 
 pub async fn start() {
     let env_passwd = std::env::var(MONGO_PASSWD);
     let mut password: Option<String> = Option::None;
-    if let Ok(pwd) = env_passwd{
+    if let Ok(pwd) = env_passwd {
         password = Some(pwd)
-    }
-    else {
+    } else {
         password = std::env::args().nth(1);
     }
     let password = password.expect("database password not set \"cargo run <MONGODB_PASSWORD>\" ");
     let modules = Arc::new(Modules::new(password.as_str()).await);
 
     let user_route = Router::new()
-        .route("/",get(register_user))
-        .route("/register",post(register_user))
-        .route("/login",post(user_login));
-
+        .route("/", get(register_user))
+        .route("/register", post(register_user))
+        .route("/login", post(user_login));
 
     let main_route = Router::new()
-        .route("/",get(user_login))
-        .nest("/user",user_route)
+        .route("/", get(user_login))
+        .nest("/user", user_route)
         .layer(Extension(Arc::clone(&modules)));
 
+    let tracing_layer = tracing_subscriber::fmt::layer();
+    tracing_subscriber::registry().with(tracing_layer).init();
 
     let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
 

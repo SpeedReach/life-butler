@@ -1,21 +1,21 @@
-use axum::http::StatusCode;
-use axum::Json;
-use axum::response::{IntoResponse, Response};
-use serde::{Deserialize, Serialize};
+use crate::driver;
 use crate::infrastructure::database::entities::user::User;
+use axum::response::IntoResponse;
+use axum::Json;
+use axum::{http::StatusCode, response::Response};
+use error_stack::Context;
+use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize,Debug)]
-pub struct RegisterUserRequest{
+use super::response::HttpResponse;
+
+#[derive(Deserialize, Debug)]
+pub struct RegisterUserRequest {
     pub email: String,
-    pub password: String
+    pub password: String,
 }
 
-#[derive(Serialize, Debug)]
-pub struct RegisterUseResponse(pub User);
-
-
-impl IntoResponse for RegisterUseResponse {
+impl IntoResponse for HttpResponse<User> {
     fn into_response(self) -> Response {
-        (StatusCode::OK,Json(self.0)).into_response()
+        (StatusCode::OK, Json(self)).into_response()
     }
 }
