@@ -7,15 +7,40 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb3b36e1-04e6-449c-87ad-3f9d4e473029" name="Changes" comment="removed user_login.rs">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T113518.401.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T113850.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T131853.403.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T131911.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T132028.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T132052.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T132243.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T132301.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133420.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133426.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133440.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133543.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/login_test.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_6_8__04_53__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_6_8_下午_04_53_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/user/delete_email_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/delete_email_user.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/user/register_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/register_user.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/use_case/user/user_login.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/user_login.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/bootstrap.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/bootstrap.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/models/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/models/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/common/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/common/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/models/register_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/models/register_user.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/models/response.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/models/user_login.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/models/user_login.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/common/mod.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/binary_tests.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,101 +51,93 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Rust File" />
-        <option value="HTTP Request" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Brian &lt;brian030128@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="HttpClientSelectedEnvironments">
-    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http" environment="test" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="hkk8fx2l" />
+    <option name="directoryName" value="3cbayai3" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2QgUsKMZYMPqsn0bje2Y0k7ivmi" />
+  <component name="ProjectId" id="2RBZ4e31dmAqDEtPupmAxRBSdWJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/rust/life-butler&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionD:/rust/life-butler/src/driver/models/create_event.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionD:/rust/life-butler/src/main.rs&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust.cargo.check&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\rust\life-butler\src\infrastructure\repositories" />
-      <recent name="D:\rust\life-butler\src\infrastructure" />
-      <recent name="D:\rust\life-butler\src\driver" />
+      <recent name="$PROJECT_DIR$/tests/binary" />
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/tests/api" />
+      <recent name="$PROJECT_DIR$/tests/binary/common" />
     </key>
   </component>
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="HTTP Request.login_test | #3">
-    <configuration name="login_test | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/.idea/login_test.http" requestIdentifier="#1" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="login_test | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/.idea/login_test.http" index="2" requestIdentifier="#2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="login_test | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/.idea/login_test.http" index="3" requestIdentifier="#3" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="register_test | Send POST request with json body" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/.idea/register_test.http" requestIdentifier="Send POST request with json body" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="register_test | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/.idea/register_test.http" index="2" requestIdentifier="#2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="life-butler" />
+  <component name="RunManager" selected="Cargo.Test api::user::login_api">
+    <configuration name="Test api::user::login_api" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package life-butler --test api_tests api::user::login_api -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="emulateTerminal" value="false" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="life-butler" />
-      <option name="filePath" />
+    <configuration name="Test api::user::register_api" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package life-butler --test api_tests api::user::register_api -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="emulateTerminal" value="false" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.login_test | #3" />
-        <item itemvalue="HTTP Request.login_test | #2" />
-        <item itemvalue="HTTP Request.login_test | #1" />
-        <item itemvalue="HTTP Request.register_test | #2" />
-        <item itemvalue="HTTP Request.register_test | Send POST request with json body" />
+        <item itemvalue="Cargo.Test api::user::login_api" />
+        <item itemvalue="Cargo.Test api::user::register_api" />
       </list>
     </recent_temporary>
   </component>
@@ -130,64 +147,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fb3b36e1-04e6-449c-87ad-3f9d4e473029" name="Changes" comment="" />
-      <created>1685774923423</created>
+      <changelist id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="" />
+      <created>1686725245340</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1685774923423</updated>
-      <workItem from="1686111662548" duration="110000" />
-      <workItem from="1686111789156" duration="613000" />
-      <workItem from="1686112428460" duration="205000" />
-      <workItem from="1686112652837" duration="2122000" />
-      <workItem from="1686196859650" duration="1256000" />
-      <workItem from="1686214617477" duration="202000" />
-      <workItem from="1686319199953" duration="5000" />
-      <workItem from="1686329889046" duration="11000" />
-      <workItem from="1686330074087" duration="239000" />
-      <workItem from="1686708876331" duration="1110000" />
-      <workItem from="1686710536493" duration="77000" />
-      <workItem from="1686710629477" duration="363000" />
-      <workItem from="1686711146495" duration="341000" />
-      <workItem from="1686711504121" duration="21000" />
-      <workItem from="1686711544816" duration="991000" />
-      <workItem from="1686712564778" duration="189000" />
-      <workItem from="1686712774680" duration="299000" />
-      <workItem from="1686713249197" duration="3994000" />
+      <updated>1686725245340</updated>
+      <workItem from="1686725247743" duration="3171000" />
     </task>
-    <task id="LOCAL-00001" summary="removed user_login.rs">
-      <created>1686114966717</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1686114966717</updated>
-    </task>
-    <task id="LOCAL-00002" summary="removed user_login.rs">
-      <created>1686214723550</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1686214723550</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed user_login.rs" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed user_login.rs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

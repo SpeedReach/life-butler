@@ -28,8 +28,8 @@ pub enum UserLoginError {
 impl Display for UserLoginError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            UserLoginError::DatabaseError => write!(f, "database error"),
-            UserLoginError::WrongEmailOrPassword => write!(f, "Login failed, wrong email or password")
+            UserLoginError::DatabaseError => write!(f, "資料庫出錯，請聯絡開發者"),
+            UserLoginError::WrongEmailOrPassword => write!(f, "密碼或帳號錯誤")
         }
     }
 }

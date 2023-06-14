@@ -21,9 +21,9 @@ pub enum RegisterUserError {
 impl Display for RegisterUserError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            RegisterUserError::DatabaseError => write!(f, "database error"),
+            RegisterUserError::DatabaseError => write!(f, "資料庫出錯，請聯絡開發者"),
             RegisterUserError::EmailAlreadyExists(email) => {
-                write!(f, "email: {}  已經被註冊", email)
+                write!(f, "此Email已被註冊： {}", email)
             }
         }
     }

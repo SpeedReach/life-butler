@@ -5,8 +5,8 @@ use axum::Json;
 use axum::{http::StatusCode, response::Response};
 use error_stack::Context;
 use serde::{Deserialize, Serialize};
+use crate::driver::models::HttpResponse;
 
-use super::response::HttpResponse;
 
 #[derive(Deserialize, Debug)]
 pub struct RegisterUserRequest {
@@ -14,8 +14,21 @@ pub struct RegisterUserRequest {
     pub password: String,
 }
 
-impl IntoResponse for HttpResponse<User> {
-    fn into_response(self) -> Response {
-        (StatusCode::OK, Json(self)).into_response()
+#[derive(Serialize)]
+pub struct RegisterUserResponse {
+    id: String,
+    email: String,
+    password: String
+}
+
+impl From<User> for RegisterUserResponse{
+    fn from(value: User) -> Self {
+        Self {
+            id: value.id,
+            email: value.email,
+            password: value.password
+        }
     }
 }
+
+

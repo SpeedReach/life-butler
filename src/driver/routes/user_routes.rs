@@ -1,7 +1,6 @@
 use crate::application::use_case::user::register_user::RegisterUserError;
 use crate::application::use_case::user::user_login::UserLoginError;
-use crate::driver::models::register_user::RegisterUserRequest;
-use crate::driver::models::response::HttpResponse;
+use crate::driver::models::register_user::{RegisterUserRequest, RegisterUserResponse};
 use crate::driver::models::user_login::{UserLoginRequest, UserLoginResponse};
 use crate::driver::module::Modules;
 use crate::infrastructure::database::entities::user::User;
@@ -10,6 +9,7 @@ use axum::response::{IntoResponse, Response};
 use axum::{Extension, Json};
 use error_stack::Report;
 use std::sync::Arc;
+use crate::driver::models::HttpResponse;
 
 pub async fn register_user(
     Extension(modules): Extension<Arc<Modules>>,
@@ -21,8 +21,8 @@ pub async fn register_user(
         .await;
 
     match result {
-        Ok(user) => HttpResponse::success(user, String::from("註冊成功")),
-        Err(report) => HttpResponse::fail(format!("{}", report.current_context())),
+        Ok(user) => HttpResponse::success(RegisterUserResponse::from(user), "註冊成功"),
+        Err(report) => HttpResponse::fail("註冊失敗",format!("{}", report.current_context())),
     }
 }
 
@@ -36,8 +36,9 @@ pub async fn user_login(
         .await;
     match result {
         Ok(user_id) => {
-            HttpResponse::success(UserLoginResponse::new(user_id), String::from("成功登入"))
+            HttpResponse::success(UserLoginResponse::from(user_id), "成功登入")
         }
-        Err(report) => HttpResponse::fail(format!("{}", report.current_context())),
+        Err(report) => HttpResponse::fail("登入失敗",format!("{}", report.current_context())),
     }
 }
+

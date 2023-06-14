@@ -24,7 +24,7 @@ pub struct DeleteEmailUserUseCase{
 impl Display for DeleteEmailUserError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
-            DeleteEmailUserError::DatabaseError => write!(f, "database error"),
+            DeleteEmailUserError::DatabaseError => write!(f, "資料庫出錯，請聯絡開發者"),
             DeleteEmailUserError::NotFound(email) => write!(f, "user with email {}, can not be found ", email)
         }
     }
