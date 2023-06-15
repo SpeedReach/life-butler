@@ -8,21 +8,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T113518.401.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T113850.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T131853.403.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T131911.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T132028.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T132052.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T132243.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T132301.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133420.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133426.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133440.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2023-06-14T133543.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/bootstrap.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/bootstrap.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/models/create_event.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/create_event.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/models/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/models/register_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/register_user.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/models/user_login.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/user_login.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/entities/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/entities/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/api/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/api/user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/user.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/binary/user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/binary/user.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,7 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="Cargo.Test api::user::login_api">
+  <component name="RunManager" selected="Cargo.Test binary::user::date_test">
     <configuration name="Test api::user::login_api" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package life-butler --test api_tests api::user::login_api -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -116,10 +118,46 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test binary::user::date_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package life-butler --test binary_tests binary::user::date_test -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="emulateTerminal" value="false" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test user" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package life-butler --test api_tests api::user" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="emulateTerminal" value="false" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Test binary::user::date_test" />
         <item itemvalue="Cargo.Test api::user::login_api" />
         <item itemvalue="Cargo.Test api::user::register_api" />
+        <item itemvalue="Cargo.Test user" />
       </list>
     </recent_temporary>
   </component>
@@ -134,7 +172,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686725245340</updated>
-      <workItem from="1686725247743" duration="4537000" />
+      <workItem from="1686725247743" duration="6641000" />
+      <workItem from="1686749987703" duration="166000" />
+      <workItem from="1686755651235" duration="4460000" />
+      <workItem from="1686801037759" duration="5941000" />
     </task>
     <task id="LOCAL-00001" summary="add title for responses">
       <created>1686728587063</created>

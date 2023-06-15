@@ -5,16 +5,17 @@ use axum::Json;
 use axum::{http::StatusCode, response::Response};
 use error_stack::Context;
 use serde::{Deserialize, Serialize};
-use crate::driver::models::HttpResponse;
+use utoipa::ToSchema;
+use crate::driver::model::HttpResponse;
 
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Debug, ToSchema)]
 pub struct RegisterUserRequest {
     pub email: String,
     pub password: String,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, ToSchema)]
 pub struct RegisterUserResponse {
     id: String,
     email: String,

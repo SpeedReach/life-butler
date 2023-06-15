@@ -1,7 +1,7 @@
 use crate::application::use_case::user::register_user::RegisterUserError;
 use crate::application::use_case::user::user_login::UserLoginError;
-use crate::driver::models::register_user::{RegisterUserRequest, RegisterUserResponse};
-use crate::driver::models::user_login::{UserLoginRequest, UserLoginResponse};
+use crate::driver::model::register_user::{RegisterUserRequest, RegisterUserResponse};
+use crate::driver::model::user_login::{UserLoginRequest, UserLoginResponse};
 use crate::driver::module::Modules;
 use crate::infrastructure::database::entities::user::User;
 use axum::http::StatusCode;
@@ -9,12 +9,18 @@ use axum::response::{IntoResponse, Response};
 use axum::{Extension, Json};
 use error_stack::Report;
 use std::sync::Arc;
-use crate::driver::models::HttpResponse;
+use crate::driver::model::HttpResponse;
 
+
+#[utoipa::path(
+post, path = "/user/register",
+responses(
+    (status = 200, description = "register a user",body = HttpResponse<RegisterUserRepsonse>)
+))]
 pub async fn register_user(
     Extension(modules): Extension<Arc<Modules>>,
     Json(request): Json<RegisterUserRequest>,
-) -> impl IntoResponse {
+) -> HttpResponse<RegisterUserResponse> {
     let result = modules
         .register_user_use_case
         .register_user(request.email, request.password)
@@ -26,10 +32,15 @@ pub async fn register_user(
     }
 }
 
+#[utoipa::path(
+post, path = "/user/login",
+responses(
+    (status = 200, description = "user login",body = HttpResponse<UserLoginResponse>)
+))]
 pub async fn user_login(
     Extension(modules): Extension<Arc<Modules>>,
     Json(request): Json<UserLoginRequest>,
-) -> impl IntoResponse {
+) -> HttpResponse<UserLoginResponse> {
     let result = modules
         .user_login_use_case
         .login(request.email, request.password)

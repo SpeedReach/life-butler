@@ -6,6 +6,9 @@ use axum::{Extension, Router};
 use std::net::SocketAddr;
 use std::sync::Arc;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
+use utoipa::OpenApi;
+use utoipa_swagger_ui::SwaggerUi;
+use crate::driver::swagger::ApiDoc;
 
 static MONGO_PASSWD: &str = "MONGO_PASSWD";
 
@@ -20,13 +23,13 @@ pub async fn start() {
     let password = password.expect("database password not set \"cargo run <MONGODB_PASSWORD>\" ");
     let modules = Arc::new(Modules::new(password.as_str()).await);
 
+
     let user_route = Router::new()
-        .route("/", get(register_user))
         .route("/register", post(register_user))
         .route("/login", post(user_login));
 
     let main_route = Router::new()
-        .route("/", get(user_login))
+        .merge(SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", ApiDoc::openapi()))
         .nest("/user", user_route)
         .layer(Extension(Arc::clone(&modules)));
 

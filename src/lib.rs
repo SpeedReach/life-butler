@@ -7,6 +7,7 @@ use axum::Router;
 pub mod application;
 pub mod infrastructure;
 pub mod driver;
+mod shared;
 
 
 
