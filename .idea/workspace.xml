@@ -9,22 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/bootstrap.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/bootstrap.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/models/create_event.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/create_event.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/models/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/models/register_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/register_user.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/models/user_login.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/user_login.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/entities/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/entities/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/api/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/api/user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/user.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/binary/user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/binary/user.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +25,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="3cbayai3" />
@@ -175,7 +161,7 @@
       <workItem from="1686725247743" duration="6641000" />
       <workItem from="1686749987703" duration="166000" />
       <workItem from="1686755651235" duration="4460000" />
-      <workItem from="1686801037759" duration="5941000" />
+      <workItem from="1686801037759" duration="6777000" />
     </task>
     <task id="LOCAL-00001" summary="add title for responses">
       <created>1686728587063</created>

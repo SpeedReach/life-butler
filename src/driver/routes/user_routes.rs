@@ -14,6 +14,7 @@ use crate::driver::model::HttpResponse;
 
 #[utoipa::path(
 post, path = "/user/register",
+request_body = RegisterUserRequest,
 responses(
     (status = 200, description = "register a user",body = HttpResponse<RegisterUserRepsonse>)
 ))]
@@ -34,6 +35,7 @@ pub async fn register_user(
 
 #[utoipa::path(
 post, path = "/user/login",
+request_body = UserLoginRequest,
 responses(
     (status = 200, description = "user login",body = HttpResponse<UserLoginResponse>)
 ))]
