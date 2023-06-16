@@ -41,7 +41,7 @@ impl GetGoingTasksUseCase {
         let mut tasks = Vec::<TaskDTO>::new();
 
         let start = min((&request).skip,(&filtered.len())-1);
-        let end = min((&request).skip +(&request).count - 1,(&filtered).len()-1);
+        let end = min((&request).skip +(&request).count - 1,(&filtered).len()-1)+1;
         for t in &filtered[start..end] {
             tasks.push(TaskDTO::from(t.clone()));
         }

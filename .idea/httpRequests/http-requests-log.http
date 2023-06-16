@@ -1,3 +1,325 @@
+GET http://localhost:8080/task/ongoing
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "done": true,
+  "skip": 0,
+  "count": 20
+}
+
+<> 2023-06-17T002938.200.json
+
+###
+
+GET http://localhost:8080/task/ongoing
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "done": true,
+  "skip": 0,
+  "count": 20
+}
+
+<> 2023-06-17T002908.200.json
+
+###
+
+GET http://165.232.170.167:8080/event/recent
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "skip": 0,
+  "count": 5
+}
+
+<> 2023-06-17T002328.200.json
+
+###
+
+POST http://165.232.170.167:8080/event
+Content-Type: application/json
+Content-Length: 188
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "start_time": "2023-06-10T14:08:46+08:00",
+  "end_time": "2023-07-13T14:08:46+08:00",
+  "notes": "測試的任務"
+}
+
+<> 2023-06-17T002326.200.json
+
+###
+
+GET http://165.232.170.167:8080/event/recent
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "skip": 0,
+  "count": 5
+}
+
+<> 2023-06-17T002318.200.json
+
+###
+
+POST http://165.232.170.167:8080/event
+Content-Type: application/json
+Content-Length: 188
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "start_time": "2023-06-10T14:08:46+08:00",
+  "end_time": "2023-07-13T14:08:46+08:00",
+  "notes": "測試的任務"
+}
+
+<> 2023-06-17T002314.200.json
+
+###
+
+POST http://165.232.170.167:8080/event
+Content-Type: application/json
+Content-Length: 188
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "start_time": "2023-06-10T14:08:46+08:00",
+  "end_time": "2023-07-13T14:08:46+08:00",
+  "notes": "測試的任務"
+}
+
+<> 2023-06-17T002313.200.json
+
+###
+
+POST http://165.232.170.167:8080/event
+Content-Type: application/json
+Content-Length: 188
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "start_time": "2023-06-10T14:08:46+08:00",
+  "end_time": "2023-07-13T14:08:46+08:00",
+  "notes": "測試的任務"
+}
+
+<> 2023-06-17T002309.200.json
+
+###
+
+POST http://165.232.170.167:8080/event
+Content-Type: application/json
+Content-Length: 188
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "start_time": "2023-06-10T14:08:46+08:00",
+  "end_time": "2023-07-13T14:08:46+08:00",
+  "notes": "測試的任務"
+}
+
+<> 2023-06-17T002308.200.json
+
+###
+
+GET http://localhost:8080/task/ongoing
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "done": true,
+  "skip": 0,
+  "count": 20
+}
+
+<> 2023-06-17T002241.200.json
+
+###
+
+GET http://localhost:8080/task/ongoing
+Content-Type: application/json
+Content-Length: 88
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "done": false,
+  "skip": 0,
+  "count": 20
+}
+
+<> 2023-06-17T002234.200.json
+
+###
+
+PATCH http://localhost:8080/task/update
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "task_id": "648c1a2e131debd0f66ff803",
+  "is_done": true
+}
+
+<> 2023-06-17T002230.200.json
+
+###
+
+GET http://localhost:8080/task/ongoing
+Content-Type: application/json
+Content-Length: 88
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "done": false,
+  "skip": 0,
+  "count": 20
+}
+
+<> 2023-06-17T002219.200.json
+
+###
+
+POST http://localhost:8080/task
+Content-Type: application/json
+Content-Length: 144
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "due": "2024-06-10T14:08:46+08:00",
+  "description": "測試的任務"
+}
+
+<> 2023-06-17T002218.200.json
+
+###
+
+GET http://localhost:8080/task/ongoing
+Content-Type: application/json
+Content-Length: 88
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "done": false,
+  "skip": 0,
+  "count": 20
+}
+
+<> 2023-06-17T002207.200.json
+
+###
+
+GET http://localhost:8080/task/ongoing
+Content-Type: application/json
+Content-Length: 87
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "done": true,
+  "skip": 0,
+  "count": 20
+}
+
+<> 2023-06-17T002055.200.json
+
+###
+
+PATCH http://localhost:8080/task/update
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "task_id": "648c7ee0d71f3379ccca2b22",
+  "is_done": true
+}
+
+<> 2023-06-17T002052.200.json
+
+###
+
+GET http://165.232.170.167:8080/event/recent
+Content-Type: application/json
+Content-Length: 70
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "skip": 0,
+  "count": 5
+}
+
+<> 2023-06-17T002041.200.json
+
+###
+
 GET http://165.232.170.167:8080/event/recent
 Content-Type: application/json
 Content-Length: 70

@@ -1,0 +1,16 @@
+{
+  "title": "成功創建活動",
+  "is_success": true,
+  "data": {
+    "event": {
+      "id": "648c8c724b8b0b48dee8842d",
+      "title": "測試任務",
+      "owner": "648b42891548ae259386d4ac",
+      "start_time": "2023-06-10T06:08:46Z",
+      "end_time": "2023-07-13T06:08:46Z",
+      "notes": "測試的任務",
+      "state": "GOING_ON"
+    }
+  },
+  "error": null
+}

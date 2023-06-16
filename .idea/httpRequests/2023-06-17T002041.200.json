@@ -1,0 +1,28 @@
+{
+  "title": "取得活動列表成功",
+  "is_success": true,
+  "data": {
+    "retrieved": 2,
+    "events": [
+      {
+        "id": "648bd705a20a04ea8bc99a27",
+        "title": "測試任務",
+        "owner": "648b42891548ae259386d4ac",
+        "start_time": "2023-06-10T06:08:46Z",
+        "end_time": "2023-07-13T06:08:46Z",
+        "notes": "測試的任務",
+        "state": "GOING_ON"
+      },
+      {
+        "id": "648bd5baa20a04ea8bc99a26",
+        "title": "測試任務",
+        "owner": "648b42891548ae259386d4ac",
+        "start_time": "2023-06-13T06:08:46Z",
+        "end_time": "2023-07-13T06:08:46Z",
+        "notes": "測試的任務",
+        "state": "GOING_ON"
+      }
+    ]
+  },
+  "error": null
+}

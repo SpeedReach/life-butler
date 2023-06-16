@@ -1,0 +1,9 @@
+{
+  "title": "成功取得進行中任務清單",
+  "is_success": true,
+  "data": {
+    "retrieved": 0,
+    "tasks": []
+  },
+  "error": null
+}
