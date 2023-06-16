@@ -10,16 +10,14 @@
     <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idea_api/create_event.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/create_event.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/idea_api/create_task.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/create_task.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idea_api/register.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/register.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/dto/task_dto.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/dto/task_dto.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/use_case/task/commands/create_task/create_task_use_case.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/task/commands/create_task/create_task_use_case.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/task/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/task/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/task/commands/update_task/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/task/commands/update_task/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/task/commands/update_task/update_task_error.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/task/commands/update_task/update_task_error.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/bootstrap.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/bootstrap.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/model/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/module/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/module/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/routes/task_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/task_routes.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/task/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/task/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,10 +86,7 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="HTTP Request.create_task | Send POST request with json body#2">
-    <configuration name="create_event | Send POST request with json body" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_event.http" requestIdentifier="Send POST request with json body" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="HTTP Request.create_event | #2">
     <configuration name="create_event | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_event.http" index="2" requestIdentifier="#2" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -104,13 +99,16 @@
     <configuration name="create_task | Send POST request with json body#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_task.http" index="2" requestIdentifier="Send POST request with json body#2" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="create_task | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_task.http" index="3" requestIdentifier="#3" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.create_task | Send POST request with json body#2" />
-        <item itemvalue="HTTP Request.create_task | Send POST request with json body#1" />
         <item itemvalue="HTTP Request.create_event | #2" />
+        <item itemvalue="HTTP Request.create_task | Send POST request with json body#2" />
+        <item itemvalue="HTTP Request.create_task | #3" />
+        <item itemvalue="HTTP Request.create_task | Send POST request with json body#1" />
         <item itemvalue="HTTP Request.create_task | Send POST request with json body" />
-        <item itemvalue="HTTP Request.create_event | Send POST request with json body" />
       </list>
     </recent_temporary>
   </component>

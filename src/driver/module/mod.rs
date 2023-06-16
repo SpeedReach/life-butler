@@ -4,6 +4,7 @@ use crate::application::use_case::event::commands::create_event::create_event_us
 use crate::application::use_case::event::queries::get_expired_events::get_expired_event_use_case::GetExpiredEventUseCase;
 use crate::application::use_case::event::queries::get_recent_events::get_recent_event_use_case::GetRecentEventUseCase;
 use crate::application::use_case::task::commands::create_task::create_task_use_case::CreateTaskUseCase;
+use crate::application::use_case::task::commands::update_task::update_task_use_case::UpdateTaskUseCase;
 use crate::application::use_case::task::queries::get_ongoing_tasks::get_ongoing_tasks_use_case::GetGoingTasksUseCase;
 use crate::application::use_case::task::queries::get_expired_tasks::get_expired_tasks_use_case::GetExpiredTasksUseCase;
 use crate::application::use_case::user::delete_email_user::DeleteEmailUserUseCase;
@@ -23,6 +24,7 @@ pub struct Modules{
     pub create_task_use_case: CreateTaskUseCase,
     pub get_done_tasks_use_case: GetGoingTasksUseCase,
     pub get_expired_tasks_use_case: GetExpiredTasksUseCase,
+    pub update_task_status_use_case: UpdateTaskUseCase
 }
 
 impl Modules{
@@ -43,7 +45,7 @@ impl Modules{
             create_task_use_case: CreateTaskUseCase::new(Arc::new((&repositories).task_repository.clone())),
             get_done_tasks_use_case: GetGoingTasksUseCase::new(Arc::new((&repositories).task_repository.clone())),
             get_expired_tasks_use_case: GetExpiredTasksUseCase::new(Arc::new((&repositories).task_repository.clone())),
-
+            update_task_status_use_case: UpdateTaskUseCase::new(Arc::new((&repositories).task_repository.clone())),
         }
     }
 

@@ -15,6 +15,9 @@ use utoipa::openapi::SchemaType::Boolean;
 use crate::application::{OperationErr, OperationError};
 
 #[derive(Serialize)]
+pub struct Empty;
+
+#[derive(Serialize)]
 pub struct HttpResponse<T>{
     title: String,
     is_success: bool,
@@ -31,6 +34,16 @@ impl<T> HttpResponse<T>{
             error: None
         }
     }
+    
+    pub fn success_empty(title: impl Into<String>) -> Self{
+        Self{
+            title: title.into(),
+            is_success: true,
+            data: None,
+            error: None
+        }
+    }
+    
     pub fn fail<E: OperationError>(title: impl Into<String>,error: E)-> Self{
         Self{
             title: title.into(),

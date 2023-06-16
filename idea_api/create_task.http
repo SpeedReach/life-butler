@@ -15,7 +15,17 @@ Content-Type: application/json
 
 {
   "user_id": "648b42891548ae259386d4ac",
-  "done": false,
+  "done": true,
   "skip": 0,
   "count": 20
+}
+
+###
+
+PATCH http://localhost:8080/task/update
+Content-Type: application/json
+
+{
+  "task_id": "648c7ee0d71f3379ccca2b22",
+  "is_done": true
 }

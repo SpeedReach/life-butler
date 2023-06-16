@@ -1,7 +1,7 @@
 use crate::driver::module::Modules;
 use crate::driver::routes::user_routes::{register_user, user_login};
 use axum::middleware::AddExtension;
-use axum::routing::{get, post, Route};
+use axum::routing::{get, patch, post, Route};
 use axum::{Extension, Router};
 use std::net::SocketAddr;
 use std::sync::Arc;
@@ -9,7 +9,7 @@ use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
 use crate::driver::routes::event_routes::{create_event, get_expired_events, get_recent_events};
-use crate::driver::routes::task_routes::{create_task, get_expired_tasks, get_ongoing_tasks};
+use crate::driver::routes::task_routes::{create_task, get_expired_tasks, get_ongoing_tasks, update_task};
 
 static MONGO_PASSWD: &str = "MONGO_PASSWD";
 
@@ -31,13 +31,14 @@ pub async fn start() {
 
     let event_route = Router::new()
         .route("/",post(create_event))
-        .route("/recent", get(get_recent_events))
-        .route("/expired", get(get_expired_events));
+        .route("/recent", get(get_recent_events).post(get_recent_events))
+        .route("/expired", get(get_expired_events).post(get_expired_tasks));
 
     let task_route = Router::new()
         .route("/", post(create_task))
-        .route("/ongoing", get(get_ongoing_tasks))
-        .route("/expired", get(get_expired_tasks));
+        .route("/ongoing", get(get_ongoing_tasks).post(get_ongoing_tasks))
+        .route("/expired", get(get_expired_tasks).post(get_expired_tasks))
+        .route("/update", post(update_task).patch(update_task));
 
     let main_route = Router::new()
         .nest("/user", user_route)

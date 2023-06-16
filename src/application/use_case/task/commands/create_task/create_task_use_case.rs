@@ -19,13 +19,13 @@ pub struct CreateTaskUseCase {
 
 
 impl CreateTaskUseCase {
-
     pub fn new(repo: Arc<TaskRepository>)->Self{
         Self{
             repository: repo
         }
     }
-    
+
+
     pub async fn create_task(&self,request: CreateTaskRequest) -> Result<CreateTaskResponse,Report<CreateTaskError>>{
         let due = DateTime::parse_from_rfc3339(request.due.as_str())
             .into_report()
