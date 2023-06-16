@@ -17,7 +17,7 @@ pub trait FindExpiredEventRepository {
 #[async_trait]
 impl FindExpiredEventRepository for EventRepository {
     async fn find_expired_events(&self, user_id: String, skip: u64, count: i64) -> Result<Vec<Event>, Report<DatabaseError>> {
-        let collection: Collection<Event> = self.driver.get_database().collection(self.collection_id.as_str());
+        let collection: Collection<Event> = self.get_collection();
         let filter = doc! { "end_time": {"$lt": DateTime(bson::DateTime::now())} };
         let options = FindOptions::builder()
             .skip(skip)

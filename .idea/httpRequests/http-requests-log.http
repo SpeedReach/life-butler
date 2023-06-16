@@ -1,3 +1,39 @@
+POST http://localhost:8080/task
+Content-Type: application/json
+Content-Length: 144
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "due": "2024-06-10T14:08:46+08:00",
+  "description": "測試的任務"
+}
+
+<> 2023-06-16T161542.200.json
+
+###
+
+POST http://localhost:8080/task
+Content-Type: application/json
+Content-Length: 144
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "due": "2023-06-10T14:08:46+08:00",
+  "description": "測試的任務"
+}
+
+<> 2023-06-16T161534.406.json
+
+###
+
 GET http://localhost:8080/event/recent
 Content-Type: application/json
 Content-Length: 70

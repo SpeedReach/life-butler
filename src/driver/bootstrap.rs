@@ -1,7 +1,7 @@
 use crate::driver::module::Modules;
 use crate::driver::routes::user_routes::{register_user, user_login};
 use axum::middleware::AddExtension;
-use axum::routing::{get, post};
+use axum::routing::{get, post, Route};
 use axum::{Extension, Router};
 use std::net::SocketAddr;
 use std::sync::Arc;
@@ -9,6 +9,7 @@ use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
 use crate::driver::routes::event_routes::{create_event, get_expired_events, get_recent_events};
+use crate::driver::routes::task_routes::create_task;
 
 static MONGO_PASSWD: &str = "MONGO_PASSWD";
 
@@ -33,9 +34,13 @@ pub async fn start() {
         .route("/recent", get(get_recent_events))
         .route("/expired", get(get_expired_events));
 
+    let task_route = Router::new()
+        .route("/", post(create_task));
+
     let main_route = Router::new()
         .nest("/user", user_route)
         .nest("/event", event_route)
+        .nest("/task", task_route)
         .layer(Extension(Arc::clone(&modules)));
 
     let tracing_layer = tracing_subscriber::fmt::layer();

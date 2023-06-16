@@ -1,3 +1,3 @@
-pub mod todo;
+pub mod task;
 pub mod user;
 pub mod event;

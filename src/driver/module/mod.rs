@@ -3,6 +3,7 @@ use std::sync::Arc;
 use crate::application::use_case::event::commands::create_event::create_event_use_case::CreateEventUseCase;
 use crate::application::use_case::event::queries::get_expired_events::get_expired_event_use_case::GetExpiredEventUseCase;
 use crate::application::use_case::event::queries::get_recent_events::get_recent_event_use_case::GetRecentEventUseCase;
+use crate::application::use_case::task::commands::create_task::create_task_use_case::CreateTaskUseCase;
 use crate::application::use_case::user::delete_email_user::DeleteEmailUserUseCase;
 use crate::application::use_case::user::register_user::RegisterUserUseCase;
 use crate::application::use_case::user::user_login::UserLoginUseCase;
@@ -16,7 +17,8 @@ pub struct Modules{
     pub delete_email_user_use_case: DeleteEmailUserUseCase,
     pub create_event_use_case: CreateEventUseCase,
     pub get_recent_events_use_case: GetRecentEventUseCase,
-    pub get_expired_events_use_case: GetExpiredEventUseCase
+    pub get_expired_events_use_case: GetExpiredEventUseCase,
+    pub create_task_use_case: CreateTaskUseCase
 }
 
 impl Modules{
@@ -33,7 +35,8 @@ impl Modules{
             delete_email_user_use_case: DeleteEmailUserUseCase::new(Arc::new((&repositories).user_repository.clone())),
             create_event_use_case: CreateEventUseCase::new(Arc::new((&repositories).event_repository.clone())),
             get_recent_events_use_case: GetRecentEventUseCase::new(Arc::new((&repositories).event_repository.clone())),
-            get_expired_events_use_case: GetExpiredEventUseCase::new(Arc::new((&repositories).event_repository.clone()))
+            get_expired_events_use_case: GetExpiredEventUseCase::new(Arc::new((&repositories).event_repository.clone())),
+            create_task_use_case: CreateTaskUseCase::new(Arc::new((&repositories).task_repository.clone()))
         }
     }
 
