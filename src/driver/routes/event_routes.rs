@@ -6,6 +6,8 @@ use crate::application::OperationErr;
 use crate::application::use_case::event::commands::create_event::create_event_error::CreateEventError;
 use crate::application::use_case::event::commands::create_event::create_event_request::CreateEventRequest;
 use crate::application::use_case::event::commands::create_event::create_event_response::CreateEventResponse;
+use crate::application::use_case::event::queries::get_expired_events::get_expired_event_request::GetExpiredEventRequest;
+use crate::application::use_case::event::queries::get_expired_events::get_expired_event_response::GetExpiredEventResponse;
 use crate::application::use_case::event::queries::get_recent_events::get_recent_event_request::GetRecentEventRequest;
 use crate::application::use_case::event::queries::get_recent_events::get_recent_event_response::GetRecentEventResponse;
 use crate::driver::model::HttpResponse;
@@ -27,6 +29,18 @@ pub async fn get_recent_events(
     Json(request): Json<GetRecentEventRequest>
 ) -> HttpResponse<GetRecentEventResponse>{
     let result = modules.get_recent_events_use_case.get_events(request)
+        .await;
+    match result {
+        Ok(res) => HttpResponse::success(res,"取得活動列表成功"),
+        Err(error) => HttpResponse::fail("取得活動列表失敗", error.current_context().clone()),
+    }
+}
+
+pub async fn get_expired_events(
+    Extension(modules): Extension<Arc<Modules>>,
+    Json(request): Json<GetExpiredEventRequest>
+) -> HttpResponse<GetExpiredEventResponse>{
+    let result = modules.get_expired_events_use_case.get_events(request)
         .await;
     match result {
         Ok(res) => HttpResponse::success(res,"取得活動列表成功"),

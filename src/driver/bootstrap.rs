@@ -8,7 +8,7 @@ use std::sync::Arc;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
-use crate::driver::routes::event_routes::{create_event, get_recent_events};
+use crate::driver::routes::event_routes::{create_event, get_expired_events, get_recent_events};
 
 static MONGO_PASSWD: &str = "MONGO_PASSWD";
 
@@ -30,7 +30,8 @@ pub async fn start() {
 
     let event_route = Router::new()
         .route("/",post(create_event))
-        .route("/recent", get(get_recent_events));
+        .route("/recent", get(get_recent_events))
+        .route("/expired", get(get_expired_events));
 
     let main_route = Router::new()
         .nest("/user", user_route)

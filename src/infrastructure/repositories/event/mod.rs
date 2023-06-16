@@ -6,6 +6,7 @@ use crate::infrastructure::database::entities::event::Event;
 
 pub mod insert_event;
 pub mod find_recent_events;
+pub mod find_expired_events;
 
 #[derive(Clone)]
 pub struct EventRepository{
