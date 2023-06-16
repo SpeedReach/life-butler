@@ -1,0 +1,83 @@
+POST http://localhost:8080/event
+Content-Type: application/json
+Content-Length: 188
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "title": "測試任務",
+  "start_time": "2023-06-13T14:08:46+08:00",
+  "end_time": "2023-06-13T14:08:46+08:00",
+  "notes": "測試的任務"
+}
+
+<> 2023-06-16T101857.200.json
+
+###
+
+POST http://localhost:8080/user/login
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "brian030128@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-16T101617.200.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "brian030128@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-16T101552.406.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "brian030128@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-16T005753.406.json
+
+###
+
+POST http://localhost:8080/user/register
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "brian030128@gmail.com",
+  "password": "123456"
+}
+
+<> 2023-06-16T005537.200.json
+
+###
+

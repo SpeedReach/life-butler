@@ -8,7 +8,7 @@ use std::sync::Arc;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
-use crate::driver::swagger::ApiDoc;
+use crate::driver::routes::event_routes::create_event;
 
 static MONGO_PASSWD: &str = "MONGO_PASSWD";
 
@@ -28,9 +28,12 @@ pub async fn start() {
         .route("/register", post(register_user))
         .route("/login", post(user_login));
 
+    let event_route = Router::new()
+        .route("/",post(create_event));
+
     let main_route = Router::new()
-        .merge(SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", ApiDoc::openapi()))
         .nest("/user", user_route)
+        .nest("/event", event_route)
         .layer(Extension(Arc::clone(&modules)));
 
     let tracing_layer = tracing_subscriber::fmt::layer();

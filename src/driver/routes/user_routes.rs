@@ -12,12 +12,7 @@ use std::sync::Arc;
 use crate::driver::model::HttpResponse;
 
 
-#[utoipa::path(
-post, path = "/user/register",
-request_body = RegisterUserRequest,
-responses(
-    (status = 200, description = "register a user",body = HttpResponse<RegisterUserRepsonse>)
-))]
+
 pub async fn register_user(
     Extension(modules): Extension<Arc<Modules>>,
     Json(request): Json<RegisterUserRequest>,
@@ -29,16 +24,11 @@ pub async fn register_user(
 
     match result {
         Ok(user) => HttpResponse::success(RegisterUserResponse::from(user), "註冊成功"),
-        Err(report) => HttpResponse::fail("註冊失敗",format!("{}", report.current_context())),
+        Err(report) => HttpResponse::fail("註冊失敗",report.current_context().clone()),
     }
 }
 
-#[utoipa::path(
-post, path = "/user/login",
-request_body = UserLoginRequest,
-responses(
-    (status = 200, description = "user login",body = HttpResponse<UserLoginResponse>)
-))]
+
 pub async fn user_login(
     Extension(modules): Extension<Arc<Modules>>,
     Json(request): Json<UserLoginRequest>,
@@ -51,7 +41,7 @@ pub async fn user_login(
         Ok(user_id) => {
             HttpResponse::success(UserLoginResponse::from(user_id), "成功登入")
         }
-        Err(report) => HttpResponse::fail("登入失敗",format!("{}", report.current_context())),
+        Err(report) => HttpResponse::fail("登入失敗", report.current_context().clone()),
     }
 }
 

@@ -7,6 +7,7 @@ use axum::response::{IntoResponse, Response};
 use error_stack::{Context, Report, ResultExt};
 use std::fmt::{write, Display, Formatter};
 use std::sync::Arc;
+use crate::application::OperationError;
 
 pub struct RegisterUserUseCase {
     repository: Arc<dyn InsertUserRepository + Sync + Send>,
@@ -29,20 +30,17 @@ impl Display for RegisterUserError {
     }
 }
 
-impl IntoResponse for RegisterUserError {
-    fn into_response(self) -> Response {
+
+impl Context for RegisterUserError {}
+
+impl OperationError for RegisterUserError{
+    fn status_code(&self) -> u16 {
         match self {
-            RegisterUserError::DatabaseError => {
-                (StatusCode::INTERNAL_SERVER_ERROR, self.to_string()).into_response()
-            }
-            RegisterUserError::EmailAlreadyExists(_) => {
-                (StatusCode::FORBIDDEN, self.to_string()).into_response()
-            }
+            RegisterUserError::DatabaseError => 500,
+            RegisterUserError::EmailAlreadyExists(_) => 406
         }
     }
 }
-
-impl Context for RegisterUserError {}
 
 impl RegisterUserUseCase {
     pub fn new(repository: Arc<UserRepository>) -> Self {

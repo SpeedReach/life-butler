@@ -5,6 +5,7 @@ use axum::http::StatusCode;
 use axum::response::{IntoResponse, Response};
 use error_stack::{Context, Report, ResultExt};
 use tracing::log::Log;
+use crate::application::OperationError;
 use crate::application::use_case::user::user_login::UserLoginError::{DatabaseError, WrongEmailOrPassword};
 use crate::infrastructure::database::entities::user::User;
 use crate::infrastructure::repositories::user::find_email_user::FindEmailUserRepository;
@@ -34,11 +35,12 @@ impl Display for UserLoginError {
     }
 }
 
-impl IntoResponse for UserLoginError {
-    fn into_response(self) -> Response {
+
+impl OperationError for UserLoginError {
+    fn status_code(&self) -> u16 {
         match self {
-            UserLoginError::DatabaseError => (StatusCode::INTERNAL_SERVER_ERROR, self.to_string()).into_response(),
-            UserLoginError::WrongEmailOrPassword => (StatusCode::UNAUTHORIZED, self.to_string()).into_response()
+            UserLoginError::DatabaseError => 500,
+            UserLoginError::WrongEmailOrPassword => 401
         }
     }
 }
