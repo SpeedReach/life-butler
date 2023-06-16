@@ -8,3 +8,14 @@ Content-Type: application/json
   "due": "2024-06-10T14:08:46+08:00",
   "description": "測試的任務"
 }
+
+### Send POST request with json body
+GET http://localhost:8080/task/ongoing
+Content-Type: application/json
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "done": false,
+  "skip": 0,
+  "count": 20
+}

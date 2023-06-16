@@ -10,7 +10,7 @@ Content-Type: application/json
   "notes": "測試的任務"
 }
 ####
-GET http://localhost:8080/event/recent
+GET http://165.232.170.167:8080/event/recent
 Content-Type: application/json
 
 {

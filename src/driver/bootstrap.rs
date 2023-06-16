@@ -9,7 +9,7 @@ use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
 use crate::driver::routes::event_routes::{create_event, get_expired_events, get_recent_events};
-use crate::driver::routes::task_routes::create_task;
+use crate::driver::routes::task_routes::{create_task, get_expired_tasks, get_ongoing_tasks};
 
 static MONGO_PASSWD: &str = "MONGO_PASSWD";
 
@@ -35,7 +35,9 @@ pub async fn start() {
         .route("/expired", get(get_expired_events));
 
     let task_route = Router::new()
-        .route("/", post(create_task));
+        .route("/", post(create_task))
+        .route("/ongoing", get(get_ongoing_tasks))
+        .route("/expired", get(get_expired_tasks));
 
     let main_route = Router::new()
         .nest("/user", user_route)

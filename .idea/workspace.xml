@@ -7,20 +7,19 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="add title for responses">
+    <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/dto/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/dto/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea_api/create_event.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/create_event.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea_api/create_task.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/create_task.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea_api/register.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/register.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/dto/task_dto.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/dto/task_dto.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/task/commands/create_task/create_task_use_case.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/task/commands/create_task/create_task_use_case.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/task/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/task/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/bootstrap.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/bootstrap.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/module/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/module/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/routes/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/database/entities/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/database/entities/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/modules.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/modules.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/event/find_expired_events.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/event/find_expired_events.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/event/find_recent_events.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/event/find_recent_events.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/todo/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/task/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/utils/date_time.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utils/date_time.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/routes/task_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/task_routes.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/task/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/task/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +88,7 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="HTTP Request.create_task | Send POST request with json body">
+  <component name="RunManager" selected="HTTP Request.create_task | Send POST request with json body#2">
     <configuration name="create_event | Send POST request with json body" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_event.http" requestIdentifier="Send POST request with json body" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -99,19 +98,19 @@
     <configuration name="create_task | Send POST request with json body" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_task.http" requestIdentifier="Send POST request with json body" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="register | Send POST request with json body" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/register.http" requestIdentifier="Send POST request with json body" runType="Run single request">
+    <configuration name="create_task | Send POST request with json body#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_task.http" requestIdentifier="Send POST request with json body#1" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="register | Send POST request with json body#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/register.http" index="2" requestIdentifier="Send POST request with json body#2" runType="Run single request">
+    <configuration name="create_task | Send POST request with json body#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_task.http" index="2" requestIdentifier="Send POST request with json body#2" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.create_task | Send POST request with json body" />
+        <item itemvalue="HTTP Request.create_task | Send POST request with json body#2" />
+        <item itemvalue="HTTP Request.create_task | Send POST request with json body#1" />
         <item itemvalue="HTTP Request.create_event | #2" />
+        <item itemvalue="HTTP Request.create_task | Send POST request with json body" />
         <item itemvalue="HTTP Request.create_event | Send POST request with json body" />
-        <item itemvalue="HTTP Request.register | Send POST request with json body#2" />
-        <item itemvalue="HTTP Request.register | Send POST request with json body" />
       </list>
     </recent_temporary>
   </component>
@@ -139,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686728587063</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add create task api">
+      <created>1686903398567</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686903398567</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +153,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add title for responses" />
-    <option name="LAST_COMMIT_MESSAGE" value="add title for responses" />
+    <MESSAGE value="add create task api" />
+    <option name="LAST_COMMIT_MESSAGE" value="add create task api" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

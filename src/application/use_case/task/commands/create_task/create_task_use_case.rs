@@ -19,6 +19,7 @@ pub struct CreateTaskUseCase {
 
 
 impl CreateTaskUseCase {
+
     pub fn new(repo: Arc<TaskRepository>)->Self{
         Self{
             repository: repo
@@ -46,4 +47,5 @@ impl CreateTaskUseCase {
             _ => Err(Report::new(CreateTaskError::DatabaseError))
         }
     }
+
 }

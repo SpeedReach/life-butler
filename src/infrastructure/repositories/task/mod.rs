@@ -1,4 +1,6 @@
 pub mod insert_task;
+pub mod find_user_tasks;
+pub mod update_task_status;
 
 use std::sync::Arc;
 use crate::infrastructure::database::database_service::DatabaseDriver;
