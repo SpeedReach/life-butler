@@ -1,5 +1,6 @@
 use std::cmp::{min, Ordering};
 use std::sync::Arc;
+use chrono::Utc;
 use error_stack::{Report, ResultExt};
 use crate::application::dto::task_dto::TaskDTO;
 use crate::application::use_case::task::queries::get_ongoing_tasks::get_ongoing_tasks_request::GetOnGoingTasksRequest;
@@ -24,8 +25,9 @@ impl GetGoingTasksUseCase {
             .change_context(GetTasksError::DatabaseError)?;
 
         let mut filtered = Vec::<Task>::new();
+        let now = Utc::now();
         for t in result {
-            if t.is_done == request.done{
+            if t.is_done == request.done && t.due.to_chrono() > now{
                 filtered.push(t);
             }
         }
