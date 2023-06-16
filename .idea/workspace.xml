@@ -8,26 +8,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/model/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/dto/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/create_event.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea_api/create_event.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/create_event.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/dto/event_dto.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/dto/event_dto.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/commands/create_event/create_event_error.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/commands/create_event/create_event_error.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/commands/create_event/create_event_use_case.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/commands/create_event/create_event_use_case.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/use_case/event/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/user/register_user.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/register_user.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/query/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/queries/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/use_case/user/user_login.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/user_login.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/bootstrap.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/bootstrap.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/model/create_event.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/model/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/model/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/driver/module/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/module/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/routes/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/user_routes.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/swagger.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/modules.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/modules.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/api/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/routes/event_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/event_routes.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/event/insert_event.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/event/insert_event.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/event/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/event/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/results/login_result.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/infrastructure/results/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/results/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Rust File" />
         <option value="HTTP Request" />
+        <option value="Rust File" />
       </list>
     </option>
   </component>
@@ -91,26 +90,9 @@
   <component name="RsExternalLinterProjectSettings">
     <option name="runOnTheFly" value="true" />
   </component>
-  <component name="RunManager" selected="HTTP Request.create_event | Send POST request with json body">
+  <component name="RunManager" selected="HTTP Request.create_event | #2">
     <configuration name="Test api::user::register_api" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package life-butler --test api_tests api::user::register_api -- --exact" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <option name="emulateTerminal" value="false" />
-      <option name="channel" value="DEFAULT" />
-      <option name="requiredFeatures" value="true" />
-      <option name="allFeatures" value="false" />
-      <option name="withSudo" value="false" />
-      <option name="buildTarget" value="REMOTE" />
-      <option name="backtrace" value="SHORT" />
-      <envs />
-      <option name="isRedirectInput" value="false" />
-      <option name="redirectInputPath" value="" />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test binary::user::date_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package life-butler --test binary_tests binary::user::date_test -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -129,6 +111,9 @@
     <configuration name="create_event | Send POST request with json body" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_event.http" requestIdentifier="Send POST request with json body" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="create_event | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_event.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="register | Send POST request with json body" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/register.http" requestIdentifier="Send POST request with json body" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -137,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.create_event | #2" />
         <item itemvalue="HTTP Request.create_event | Send POST request with json body" />
         <item itemvalue="HTTP Request.register | Send POST request with json body#2" />
         <item itemvalue="HTTP Request.register | Send POST request with json body" />
         <item itemvalue="Cargo.Test api::user::register_api" />
-        <item itemvalue="Cargo.Test binary::user::date_test" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +145,7 @@
       <workItem from="1686749987703" duration="166000" />
       <workItem from="1686755651235" duration="4460000" />
       <workItem from="1686801037759" duration="6777000" />
-      <workItem from="1686836755586" duration="11964000" />
+      <workItem from="1686836755586" duration="17767000" />
     </task>
     <task id="LOCAL-00001" summary="add title for responses">
       <created>1686728587063</created>

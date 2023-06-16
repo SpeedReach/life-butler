@@ -11,7 +11,6 @@ use crate::infrastructure::database::entities::user::User;
 use crate::infrastructure::repositories::user::find_email_user::FindEmailUserRepository;
 use crate::infrastructure::repositories::user::find_id_user::FindIDUserRepository;
 use crate::infrastructure::repositories::user::UserRepository;
-use crate::infrastructure::results::login_result::LoginResult;
 
 
 pub struct UserLoginUseCase{

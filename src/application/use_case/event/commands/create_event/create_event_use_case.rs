@@ -1,5 +1,5 @@
 use std::sync::Arc;
-use chrono::DateTime;
+use chrono::{DateTime, Utc};
 use mongodb::bson::DateTime as DT;
 use chrono::format::Item::Fixed;
 use error_stack::{IntoReport, Report, ResultExt};
@@ -32,6 +32,9 @@ impl CreateEventUseCase{
         let end_time = DateTime::parse_from_rfc3339(request.end_time.as_str())
             .into_report()
             .change_context(CreateEventError::ParsingError(request.end_time))?;
+        if end_time < Utc::now() {
+            return Err(Report::new(CreateEventError::AlreadyExpired));
+        }
         let event = Event::new(
             request.title,
             request.user_id,

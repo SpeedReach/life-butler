@@ -923,6 +923,7 @@ name = "life-butler"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "bson",
  "chrono",
  "error-stack",
  "futures",

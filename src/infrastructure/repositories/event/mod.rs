@@ -5,6 +5,7 @@ use crate::infrastructure::database::database_service::DatabaseDriver;
 use crate::infrastructure::database::entities::event::Event;
 
 pub mod insert_event;
+pub mod find_recent_events;
 
 #[derive(Clone)]
 pub struct EventRepository{

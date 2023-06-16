@@ -7,7 +7,7 @@ use crate::infrastructure::repositories::event::EventRepository;
 
 #[async_trait]
 pub trait InsertEventRepository {
-    async fn insert_event(&self, user: Event) -> Result<InsertResult<Event>,Report<DatabaseError>>;
+    async fn insert_event(&self, event: Event) -> Result<InsertResult<Event>,Report<DatabaseError>>;
 }
 
 #[async_trait]
