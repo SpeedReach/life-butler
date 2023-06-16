@@ -39,8 +39,8 @@ Content-Type: application/json
 ```json
 {
   "user_id": "648b42891548ae259386d4ac",
-  "closest": 1,
-  "furthest": 2
+  "skip": 1,
+  "count": 2
 }
 ```
 response:

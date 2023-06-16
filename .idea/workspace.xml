@@ -8,25 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API.md" beforeDir="false" afterPath="$PROJECT_DIR$/API.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idea_api/create_event.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/create_event.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/dto/event_dto.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/dto/event_dto.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/commands/create_event/create_event_error.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/commands/create_event/create_event_error.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/commands/create_event/create_event_use_case.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/commands/create_event/create_event_use_case.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/event/query/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/event/queries/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/use_case/user/user_login.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/user/user_login.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/bootstrap.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/bootstrap.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/module/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/module/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/routes/event_routes.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/routes/event_routes.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/event/insert_event.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/event/insert_event.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/repositories/event/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/repositories/event/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/results/login_result.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/infrastructure/results/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/infrastructure/results/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +127,7 @@
       <workItem from="1686749987703" duration="166000" />
       <workItem from="1686755651235" duration="4460000" />
       <workItem from="1686801037759" duration="6777000" />
-      <workItem from="1686836755586" duration="17767000" />
+      <workItem from="1686836755586" duration="18247000" />
     </task>
     <task id="LOCAL-00001" summary="add title for responses">
       <created>1686728587063</created>
