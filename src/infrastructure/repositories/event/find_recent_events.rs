@@ -19,7 +19,7 @@ pub trait FindRecentEventRepository {
 impl FindRecentEventRepository for EventRepository {
     async fn find_recent_events(&self, user_id: String, skip: u64, count: i64) -> Result<Vec<Event>, Report<DatabaseError>> {
         let collection: Collection<Event> = self.get_collection();
-        let filter = doc! { "end_time": {"$gt": DateTime(bson::DateTime::now())} };
+        let filter = doc! { "end_time": {"$gt": DateTime(bson::DateTime::now())}, "owner": user_id };
         let options = FindOptions::builder()
             .skip(skip)
             .limit(count)
