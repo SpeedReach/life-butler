@@ -1,0 +1,22 @@
+{
+  "title": "成功取得",
+  "is_success": true,
+  "data": {
+    "_id": {
+      "$oid": "648d708d926bf1b7d5f1af7a"
+    },
+    "user_id": "648b42891548ae259386d4ac",
+    "sleeping": true,
+    "last_wakeup": {
+      "$date": {
+        "$numberLong": "1686990989272"
+      }
+    },
+    "last_eaten": {
+      "$date": {
+        "$numberLong": "1686991228260"
+      }
+    }
+  },
+  "error": null
+}

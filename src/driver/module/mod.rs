@@ -15,6 +15,7 @@ use crate::infrastructure::modules::RepositoriesModule;
 use crate::infrastructure::repositories::event::find_recent_events::FindRecentEventRepository;
 
 pub struct Modules{
+    pub driver: Arc<DatabaseDriver>,
     pub register_user_use_case: RegisterUserUseCase,
     pub user_login_use_case: UserLoginUseCase,
     pub delete_email_user_use_case: DeleteEmailUserUseCase,
@@ -24,7 +25,8 @@ pub struct Modules{
     pub create_task_use_case: CreateTaskUseCase,
     pub get_done_tasks_use_case: GetGoingTasksUseCase,
     pub get_expired_tasks_use_case: GetExpiredTasksUseCase,
-    pub update_task_status_use_case: UpdateTaskUseCase
+    pub update_task_status_use_case: UpdateTaskUseCase,
+    
 }
 
 impl Modules{
@@ -33,9 +35,10 @@ impl Modules{
         let driver= Arc::new(DatabaseDriver::new(DatabaseConfig::new(format!("mongodb+srv://brian920128:{}@cluster0.hek6yds.mongodb.net/?retryWrites=true&w=majority",password), "life-butler"))
             .await
             .unwrap());
-        let repositories = Arc::new(RepositoriesModule::new(driver).await);
+        let repositories = Arc::new(RepositoriesModule::new(driver.clone()).await);
 
         Self{
+            driver: Arc::clone(&driver),
             register_user_use_case: RegisterUserUseCase::new(Arc::new((&repositories).user_repository.clone())),
             user_login_use_case: UserLoginUseCase::new(Arc::new((&repositories).user_repository.clone())),
             delete_email_user_use_case: DeleteEmailUserUseCase::new(Arc::new((&repositories).user_repository.clone())),

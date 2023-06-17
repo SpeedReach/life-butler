@@ -1,0 +1,324 @@
+Index: idea_api/create_task.http
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>### Send POST request with json body\nPOST http://localhost:8080/task\nContent-Type: application/json\n\n{\n  \"user_id\": \"648b42891548ae259386d4ac\",\n  \"title\": \"測試任務\",\n  \"due\": \"2024-06-10T14:08:46+08:00\",\n  \"description\": \"測試的任務\"\n}\n\n### Send POST request with json body\nGET http://localhost:8080/task/ongoing\nContent-Type: application/json\n\n{\n  \"user_id\": \"648b42891548ae259386d4ac\",\n  \"done\": true,\n  \"skip\": 0,\n  \"count\": 20\n}\n\n###\n\nPATCH http://localhost:8080/task/update\nContent-Type: application/json\n\n{\n  \"task_id\": \"648c1a2e131debd0f66ff803\",\n  \"is_done\": true\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/idea_api/create_task.http b/idea_api/create_task.http
+--- a/idea_api/create_task.http	(revision 5d47983b8924545ad1d9f4a37bb161d1e0e1eb18)
++++ b/idea_api/create_task.http	(date 1686933969981)
+@@ -5,7 +5,7 @@
+ {
+   "user_id": "648b42891548ae259386d4ac",
+   "title": "測試任務",
+-  "due": "2024-06-10T14:08:46+08:00",
++  "due": "2023-06-17T00:46:59+08:00",
+   "description": "測試的任務"
+ }
+ 
+Index: .idea/httpRequests/2023-06-17T004602.406.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/httpRequests/2023-06-17T004602.406.json b/.idea/httpRequests/2023-06-17T004602.406.json
+new file mode 100644
+--- /dev/null	(date 1686933962935)
++++ b/.idea/httpRequests/2023-06-17T004602.406.json	(date 1686933962935)
+@@ -0,0 +1,6 @@
++{
++  "title": "創建任務失敗",
++  "is_success": false,
++  "data": null,
++  "error": "不能創建已經過期的活動"
++}
+\ No newline at end of file
+Index: .idea/httpRequests/2023-06-17T004610.200.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/httpRequests/2023-06-17T004610.200.json b/.idea/httpRequests/2023-06-17T004610.200.json
+new file mode 100644
+--- /dev/null	(date 1686933970088)
++++ b/.idea/httpRequests/2023-06-17T004610.200.json	(date 1686933970088)
+@@ -0,0 +1,16 @@
++{
++  "title": "成功創建任務",
++  "is_success": true,
++  "data": {
++    "event": {
++      "id": "648c91d2d0fd54bb2995c54d",
++      "owner": "648b42891548ae259386d4ac",
++      "title": "測試任務",
++      "due": "2023-06-17T00:46:59+08:00",
++      "description": "測試的任務",
++      "is_done": false,
++      "expired": false
++    }
++  },
++  "error": null
++}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"CargoProjects\">\n    <cargoProject FILE=\"$PROJECT_DIR$/Cargo.toml\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"322ab59a-bbe4-467c-ac33-a88806164ecd\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/idea_api/create_task.http\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/idea_api/create_task.http\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/application/use_case/task/queries/get_expired_tasks/get_expired_tasks_use_case.rs\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/application/use_case/task/queries/get_expired_tasks/get_expired_tasks_use_case.rs\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"HTTP Request\" />\n        <option value=\"Rust File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"HttpClientSelectedEnvironments\">\n    <file url=\"jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/post-requests.http\" environment=\"test\" />\n  </component>\n  <component name=\"MacroExpansionManager\">\n    <option name=\"directoryName\" value=\"3cbayai3\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2RBZ4e31dmAqDEtPupmAxRBSdWJ\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"dart.analysis.tool.window.visible\": \"false\",\n    \"git-widget-placeholder\": \"main\",\n    \"last_opened_file_path\": \"/Users/brianchan/Desktop/rust/life-butler/src/application/use_case/task/commands/create_task\",\n    \"node.js.detected.package.eslint\": \"true\",\n    \"node.js.detected.package.tslint\": \"true\",\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\n    \"nodejs_package_manager_path\": \"npm\",\n    \"org.rust.cargo.project.model.PROJECT_DISCOVERY\": \"true\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.0\",\n    \"project.structure.side.proportion\": \"0.0\",\n    \"settings.editor.selected.configurable\": \"language.rust.cargo.check\",\n    \"show.migrate.to.gradle.popup\": \"false\",\n    \"vue.rearranger.settings.migration\": \"true\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/src/application/use_case/task/commands/create_task\" />\n      <recent name=\"D:\\rust\\life-butler\\src\\application\\use_case\\event\\queries\\get_expired_events\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/tests/binary\" />\n      <recent name=\"$PROJECT_DIR$/tests\" />\n      <recent name=\"$PROJECT_DIR$/tests/api\" />\n      <recent name=\"$PROJECT_DIR$/tests/binary/common\" />\n    </key>\n  </component>\n  <component name=\"RsExternalLinterProjectSettings\">\n    <option name=\"runOnTheFly\" value=\"true\" />\n  </component>\n  <component name=\"RunManager\" selected=\"HTTP Request.create_task | Send POST request with json body#2\">\n    <configuration name=\"create_event | Send POST request with json body\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" nameIsGenerated=\"true\" path=\"$PROJECT_DIR$/idea_api/create_event.http\" requestIdentifier=\"Send POST request with json body\" runType=\"Run single request\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"create_event | #2\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" nameIsGenerated=\"true\" path=\"$PROJECT_DIR$/idea_api/create_event.http\" index=\"2\" requestIdentifier=\"#2\" runType=\"Run single request\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"create_task | Send POST request with json body#1\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" nameIsGenerated=\"true\" path=\"$PROJECT_DIR$/idea_api/create_task.http\" requestIdentifier=\"Send POST request with json body#1\" runType=\"Run single request\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"create_task | Send POST request with json body#2\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" nameIsGenerated=\"true\" path=\"$PROJECT_DIR$/idea_api/create_task.http\" index=\"2\" requestIdentifier=\"Send POST request with json body#2\" runType=\"Run single request\">\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"create_task | #3\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" nameIsGenerated=\"true\" path=\"$PROJECT_DIR$/idea_api/create_task.http\" index=\"3\" requestIdentifier=\"#3\" runType=\"Run single request\">\n      <method v=\"2\" />\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"HTTP Request.create_task | Send POST request with json body#2\" />\n        <item itemvalue=\"HTTP Request.create_task | #3\" />\n        <item itemvalue=\"HTTP Request.create_event | #2\" />\n        <item itemvalue=\"HTTP Request.create_event | Send POST request with json body\" />\n        <item itemvalue=\"HTTP Request.create_task | Send POST request with json body#1\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"RustProjectSettings\">\n    <option name=\"toolchainHomeDirectory\" value=\"$USER_HOME$/.cargo/bin\" />\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"322ab59a-bbe4-467c-ac33-a88806164ecd\" name=\"Changes\" comment=\"\" />\n      <created>1686725245340</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1686725245340</updated>\n      <workItem from=\"1686725247743\" duration=\"6641000\" />\n      <workItem from=\"1686749987703\" duration=\"166000\" />\n      <workItem from=\"1686755651235\" duration=\"4460000\" />\n      <workItem from=\"1686801037759\" duration=\"6777000\" />\n      <workItem from=\"1686836755586\" duration=\"19471000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"add title for responses\">\n      <created>1686728587063</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1686728587063</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"add create task api\">\n      <created>1686903398567</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1686903398567</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"add title for responses\" />\n    <MESSAGE value=\"add create task api\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"add create task api\" />\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand />\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 5d47983b8924545ad1d9f4a37bb161d1e0e1eb18)
++++ b/.idea/workspace.xml	(date 1686985731285)
+@@ -8,10 +8,14 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="322ab59a-bbe4-467c-ac33-a88806164ecd" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-06-17T004517.406.json" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-06-17T004550.406.json" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-06-17T004556.406.json" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-06-17T004602.406.json" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2023-06-17T004610.200.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/idea_api/create_task.http" beforeDir="false" afterPath="$PROJECT_DIR$/idea_api/create_task.http" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/application/use_case/task/queries/get_expired_tasks/get_expired_tasks_use_case.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/use_case/task/queries/get_expired_tasks/get_expired_tasks_use_case.rs" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -44,27 +48,27 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "dart.analysis.tool.window.visible": "false",
+-    "git-widget-placeholder": "main",
+-    "last_opened_file_path": "/Users/brianchan/Desktop/rust/life-butler/src/application/use_case/task/commands/create_task",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "language.rust.cargo.check",
+-    "show.migrate.to.gradle.popup": "false",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/Users/brianchan/Desktop/rust/life-butler/src/application/use_case/task/commands/create_task&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust.cargo.check&quot;,
++    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/src/application/use_case/task/commands/create_task" />
+@@ -80,7 +84,7 @@
+   <component name="RsExternalLinterProjectSettings">
+     <option name="runOnTheFly" value="true" />
+   </component>
+-  <component name="RunManager" selected="HTTP Request.create_task | Send POST request with json body#2">
++  <component name="RunManager" selected="HTTP Request.create_task | Send POST request with json body#1">
+     <configuration name="create_event | Send POST request with json body" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/idea_api/create_event.http" requestIdentifier="Send POST request with json body" runType="Run single request">
+       <method v="2" />
+     </configuration>
+@@ -98,11 +102,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="HTTP Request.create_task | Send POST request with json body#1" />
+         <item itemvalue="HTTP Request.create_task | Send POST request with json body#2" />
+         <item itemvalue="HTTP Request.create_task | #3" />
+         <item itemvalue="HTTP Request.create_event | #2" />
+         <item itemvalue="HTTP Request.create_event | Send POST request with json body" />
+-        <item itemvalue="HTTP Request.create_task | Send POST request with json body#1" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -122,6 +126,9 @@
+       <workItem from="1686755651235" duration="4460000" />
+       <workItem from="1686801037759" duration="6777000" />
+       <workItem from="1686836755586" duration="19471000" />
++      <workItem from="1686982628827" duration="236000" />
++      <workItem from="1686984068190" duration="187000" />
++      <workItem from="1686984554462" duration="102000" />
+     </task>
+     <task id="LOCAL-00001" summary="add title for responses">
+       <created>1686728587063</created>
+Index: .idea/httpRequests/2023-06-17T004550.406.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/httpRequests/2023-06-17T004550.406.json b/.idea/httpRequests/2023-06-17T004550.406.json
+new file mode 100644
+--- /dev/null	(date 1686933950919)
++++ b/.idea/httpRequests/2023-06-17T004550.406.json	(date 1686933950919)
+@@ -0,0 +1,6 @@
++{
++  "title": "創建任務失敗",
++  "is_success": false,
++  "data": null,
++  "error": "無法將 2023-06-17T00:046:46+08:00 轉成日期"
++}
+\ No newline at end of file
+Index: .idea/httpRequests/2023-06-17T004556.406.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/httpRequests/2023-06-17T004556.406.json b/.idea/httpRequests/2023-06-17T004556.406.json
+new file mode 100644
+--- /dev/null	(date 1686933956550)
++++ b/.idea/httpRequests/2023-06-17T004556.406.json	(date 1686933956550)
+@@ -0,0 +1,6 @@
++{
++  "title": "創建任務失敗",
++  "is_success": false,
++  "data": null,
++  "error": "無法將 2023-06-17T00:046:00+08:00 轉成日期"
++}
+\ No newline at end of file
+Index: .idea/httpRequests/http-requests-log.http
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>GET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 87\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": true,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-17T002938.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 87\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": true,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-17T002908.200.json\r\n\r\n###\r\n\r\nGET http://165.232.170.167:8080/event/recent\r\nContent-Type: application/json\r\nContent-Length: 70\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"skip\": 0,\r\n  \"count\": 5\r\n}\r\n\r\n<> 2023-06-17T002328.200.json\r\n\r\n###\r\n\r\nPOST http://165.232.170.167:8080/event\r\nContent-Type: application/json\r\nContent-Length: 188\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"start_time\": \"2023-06-10T14:08:46+08:00\",\r\n  \"end_time\": \"2023-07-13T14:08:46+08:00\",\r\n  \"notes\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-17T002326.200.json\r\n\r\n###\r\n\r\nGET http://165.232.170.167:8080/event/recent\r\nContent-Type: application/json\r\nContent-Length: 70\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"skip\": 0,\r\n  \"count\": 5\r\n}\r\n\r\n<> 2023-06-17T002318.200.json\r\n\r\n###\r\n\r\nPOST http://165.232.170.167:8080/event\r\nContent-Type: application/json\r\nContent-Length: 188\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"start_time\": \"2023-06-10T14:08:46+08:00\",\r\n  \"end_time\": \"2023-07-13T14:08:46+08:00\",\r\n  \"notes\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-17T002314.200.json\r\n\r\n###\r\n\r\nPOST http://165.232.170.167:8080/event\r\nContent-Type: application/json\r\nContent-Length: 188\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"start_time\": \"2023-06-10T14:08:46+08:00\",\r\n  \"end_time\": \"2023-07-13T14:08:46+08:00\",\r\n  \"notes\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-17T002313.200.json\r\n\r\n###\r\n\r\nPOST http://165.232.170.167:8080/event\r\nContent-Type: application/json\r\nContent-Length: 188\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"start_time\": \"2023-06-10T14:08:46+08:00\",\r\n  \"end_time\": \"2023-07-13T14:08:46+08:00\",\r\n  \"notes\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-17T002309.200.json\r\n\r\n###\r\n\r\nPOST http://165.232.170.167:8080/event\r\nContent-Type: application/json\r\nContent-Length: 188\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"start_time\": \"2023-06-10T14:08:46+08:00\",\r\n  \"end_time\": \"2023-07-13T14:08:46+08:00\",\r\n  \"notes\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-17T002308.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 87\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": true,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-17T002241.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 88\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": false,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-17T002234.200.json\r\n\r\n###\r\n\r\nPATCH http://localhost:8080/task/update\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"task_id\": \"648c1a2e131debd0f66ff803\",\r\n  \"is_done\": true\r\n}\r\n\r\n<> 2023-06-17T002230.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 88\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": false,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-17T002219.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/task\r\nContent-Type: application/json\r\nContent-Length: 144\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"due\": \"2024-06-10T14:08:46+08:00\",\r\n  \"description\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-17T002218.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 88\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": false,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-17T002207.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 87\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": true,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-17T002055.200.json\r\n\r\n###\r\n\r\nPATCH http://localhost:8080/task/update\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"task_id\": \"648c7ee0d71f3379ccca2b22\",\r\n  \"is_done\": true\r\n}\r\n\r\n<> 2023-06-17T002052.200.json\r\n\r\n###\r\n\r\nGET http://165.232.170.167:8080/event/recent\r\nContent-Type: application/json\r\nContent-Length: 70\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"skip\": 0,\r\n  \"count\": 5\r\n}\r\n\r\n<> 2023-06-17T002041.200.json\r\n\r\n###\r\n\r\nGET http://165.232.170.167:8080/event/recent\r\nContent-Type: application/json\r\nContent-Length: 70\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"skip\": 0,\r\n  \"count\": 5\r\n}\r\n\r\n<> 2023-06-17T001423.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 87\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": true,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-17T000133.200.json\r\n\r\n###\r\n\r\nPATCH http://localhost:8080/task/update\r\nContent-Type: application/json\r\nContent-Length: 47\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"task_id\": \"648c7ee0d71f3379ccca2b22\",\r\n\r\n}\r\n\r\n<> 2023-06-16T235810.400.txt\r\n\r\n###\r\n\r\nPATCH http://localhost:8080/task/update\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"task_id\": \"648c7ee0d71f3379ccca2b22\",\r\n  \"is_done\": true\r\n}\r\n\r\n<> 2023-06-16T235746.200.json\r\n\r\n###\r\n\r\nPATCH http://localhost:8080/task/update\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"task_id\": \"648c7ee0d71f3379ccca2b22\",\r\n  \"is_done\": true\r\n}\r\n\r\n<> 2023-06-16T235743.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 87\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": true,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-16T235732.200.json\r\n\r\n###\r\n\r\nPATCH http://localhost:8080/task/update\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"task_id\": \"648c7ee0d71f3379ccca2b22\",\r\n  \"is_done\": true\r\n}\r\n\r\n<> 2023-06-16T235729.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 87\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": true,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-16T235706.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 88\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": false,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-16T235656.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 88\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": false,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-16T232525.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/task\r\nContent-Type: application/json\r\nContent-Length: 144\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"due\": \"2024-06-10T14:08:46+08:00\",\r\n  \"description\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-16T232523.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/task\r\nContent-Type: application/json\r\nContent-Length: 144\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"due\": \"2024-06-10T14:08:46+08:00\",\r\n  \"description\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-16T232520.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 88\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": false,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-16T232514.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/task\r\nContent-Type: application/json\r\nContent-Length: 144\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"due\": \"2024-06-10T14:08:46+08:00\",\r\n  \"description\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-16T232504.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/task/ongoing\r\nContent-Type: application/json\r\nContent-Length: 88\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"done\": false,\r\n  \"skip\": 0,\r\n  \"count\": 20\r\n}\r\n\r\n<> 2023-06-16T232049.200.json\r\n\r\n###\r\n\r\nGET http://165.232.170.167:8080/event/recent\r\nContent-Type: application/json\r\nContent-Length: 70\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"skip\": 0,\r\n  \"count\": 5\r\n}\r\n\r\n<> 2023-06-16T214015.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/task\r\nContent-Type: application/json\r\nContent-Length: 144\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"due\": \"2024-06-10T14:08:46+08:00\",\r\n  \"description\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-16T161542.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/task\r\nContent-Type: application/json\r\nContent-Length: 144\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"due\": \"2023-06-10T14:08:46+08:00\",\r\n  \"description\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-16T161534.406.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/event/recent\r\nContent-Type: application/json\r\nContent-Length: 70\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"skip\": 0,\r\n  \"count\": 5\r\n}\r\n\r\n<> 2023-06-16T120114.200.json\r\n\r\n###\r\n\r\nGET http://localhost:8080/event/recent\r\nContent-Length: 101\r\nContent-Type: */*; charset=UTF-8\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\nContent-Type: application/json\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"skip\": 0,\r\n  \"count\": 5\r\n}\r\n\r\n<> 2023-06-16T120103.415.txt\r\n\r\n###\r\n\r\nPOST http://165.232.170.167:8080/event\r\nContent-Type: application/json\r\nContent-Length: 188\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"start_time\": \"2023-06-10T14:08:46+08:00\",\r\n  \"end_time\": \"2023-07-13T14:08:46+08:00\",\r\n  \"notes\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-16T112911.200.json\r\n\r\n###\r\n\r\nPOST http://165.232.170.167:8080/event\r\nContent-Type: application/json\r\nContent-Length: 188\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"start_time\": \"2023-06-13T14:08:46+08:00\",\r\n  \"end_time\": \"2023-07-13T14:08:46+08:00\",\r\n  \"notes\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-16T112340.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/event\r\nContent-Type: application/json\r\nContent-Length: 188\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"user_id\": \"648b42891548ae259386d4ac\",\r\n  \"title\": \"測試任務\",\r\n  \"start_time\": \"2023-06-13T14:08:46+08:00\",\r\n  \"end_time\": \"2023-06-13T14:08:46+08:00\",\r\n  \"notes\": \"測試的任務\"\r\n}\r\n\r\n<> 2023-06-16T101857.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/login\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n\r\n<> 2023-06-16T101617.200.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/register\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n\r\n<> 2023-06-16T101552.406.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/register\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n\r\n<> 2023-06-16T005753.406.json\r\n\r\n###\r\n\r\nPOST http://localhost:8080/user/register\r\nContent-Type: application/json\r\nContent-Length: 62\r\nConnection: Keep-Alive\r\nUser-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)\r\nAccept-Encoding: br,deflate,gzip,x-gzip\r\n\r\n{\r\n  \"email\": \"brian030128@gmail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n\r\n<> 2023-06-16T005537.200.json\r\n\r\n###\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/httpRequests/http-requests-log.http b/.idea/httpRequests/http-requests-log.http
+--- a/.idea/httpRequests/http-requests-log.http	(revision 5d47983b8924545ad1d9f4a37bb161d1e0e1eb18)
++++ b/.idea/httpRequests/http-requests-log.http	(date 1686934691438)
+@@ -1,3 +1,93 @@
++POST http://localhost:8080/task
++Content-Type: application/json
++Content-Length: 144
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "user_id": "648b42891548ae259386d4ac",
++  "title": "測試任務",
++  "due": "2023-06-17T00:46:59+08:00",
++  "description": "測試的任務"
++}
++
++<> 2023-06-17T004610.200.json
++
++###
++
++POST http://localhost:8080/task
++Content-Type: application/json
++Content-Length: 144
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "user_id": "648b42891548ae259386d4ac",
++  "title": "測試任務",
++  "due": "2023-06-17T00:46:00+08:00",
++  "description": "測試的任務"
++}
++
++<> 2023-06-17T004602.406.json
++
++###
++
++POST http://localhost:8080/task
++Content-Type: application/json
++Content-Length: 145
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "user_id": "648b42891548ae259386d4ac",
++  "title": "測試任務",
++  "due": "2023-06-17T00:046:00+08:00",
++  "description": "測試的任務"
++}
++
++<> 2023-06-17T004556.406.json
++
++###
++
++POST http://localhost:8080/task
++Content-Type: application/json
++Content-Length: 145
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "user_id": "648b42891548ae259386d4ac",
++  "title": "測試任務",
++  "due": "2023-06-17T00:046:46+08:00",
++  "description": "測試的任務"
++}
++
++<> 2023-06-17T004550.406.json
++
++###
++
++POST http://localhost:8080/task
++Content-Type: application/json
++Content-Length: 144
++Connection: Keep-Alive
++User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
++Accept-Encoding: br,deflate,gzip,x-gzip
++
++{
++  "user_id": "648b42891548ae259386d4ac",
++  "title": "測試任務",
++  "due": "2019-06-10T14:08:46+08:00",
++  "description": "測試的任務"
++}
++
++<> 2023-06-17T004517.406.json
++
++###
++
+ GET http://localhost:8080/task/ongoing
+ Content-Type: application/json
+ Content-Length: 87
+Index: .idea/httpRequests/2023-06-17T004517.406.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/httpRequests/2023-06-17T004517.406.json b/.idea/httpRequests/2023-06-17T004517.406.json
+new file mode 100644
+--- /dev/null	(date 1686933917449)
++++ b/.idea/httpRequests/2023-06-17T004517.406.json	(date 1686933917449)
+@@ -0,0 +1,6 @@
++{
++  "title": "創建任務失敗",
++  "is_success": false,
++  "data": null,
++  "error": "不能創建已經過期的活動"
++}
+\ No newline at end of file

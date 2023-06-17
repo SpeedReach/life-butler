@@ -1,0 +1,17 @@
+### Send POST request with json body
+POST http://localhost:8080/routine/sleep
+Content-Type: application/json
+
+{
+  "user_id": "648b42891548ae259386d4ac",
+  "sleep": false
+}
+
+### Send POST request with json body
+POST http://localhost:8080/routine/eat/648b42891548ae259386d4ac
+Content-Type: application/json
+
+### Send POST request with json body
+GET http://localhost:8080/routine/648b42891548ae259386d4ac
+Content-Type: application/json
+

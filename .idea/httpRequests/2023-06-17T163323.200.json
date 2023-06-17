@@ -1,0 +1,20 @@
+{
+  "title": "success",
+  "is_success": true,
+  "data": {
+    "_id": "648d6fd359fd4450535fad3f",
+    "user_id": "648b42891548ae259386d4a",
+    "sleeping": false,
+    "last_wakeup": {
+      "$date": {
+        "$numberLong": "1686990803422"
+      }
+    },
+    "last_eaten": {
+      "$date": {
+        "$numberLong": "1686990803422"
+      }
+    }
+  },
+  "error": null
+}

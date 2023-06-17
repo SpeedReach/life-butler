@@ -1,0 +1,16 @@
+{
+  "title": "成功創建任務",
+  "is_success": true,
+  "data": {
+    "event": {
+      "id": "648c91d2d0fd54bb2995c54d",
+      "owner": "648b42891548ae259386d4ac",
+      "title": "測試任務",
+      "due": "2023-06-17T00:46:59+08:00",
+      "description": "測試的任務",
+      "is_done": false,
+      "expired": false
+    }
+  },
+  "error": null
+}
