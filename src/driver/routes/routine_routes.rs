@@ -23,25 +23,31 @@ pub async fn user_sleep(
         .upsert(true)
         .build();
 
-
-
-    let result = modules
-        .driver
-        .get_database()
-        .collection::<UserRoutine>("routine")
-        .update_one(doc! {"user_id": request.clone().user_id},doc! {
-            "$set": {"sleeping": request.sleep, "last_wakeup": DateTime::now(), "user_id": request.user_id},
-            "$setOnInsert": {  "last_eaten": DateTime::now() },
-        }, options ).await;
-
-
-    match result {
-        Ok(_) => HttpResponse::success_empty("成功更新睡眠狀態"),
-        Err(e) => {
-            println!("{}", e);
-            HttpResponse::fail("更新狀態失敗", DatabaseError)
-        },
+    let collection = modules.driver.get_database().collection::<UserRoutine>("routine");
+    let find_result = collection.find_one(doc! {"user_id": request.user_id.clone()}, None)
+        .await
+        .unwrap();
+    if find_result.is_none(){
+        return HttpResponse::fail_empty("找不到使用者資料");
     }
+    collection.update_one(
+        doc! {"user_id": request.user_id.clone()},
+        doc! {
+                "$set": {"sleeping": request.sleep}
+            },
+        None
+    ).await;
+    if find_result.unwrap().sleeping && !request.sleep{
+        collection.update_one(
+            doc! {"user_id": request.user_id.clone()},
+            doc! {
+                "$set": {"last_wakeup": DateTime::now()}
+            },
+            None
+        ).await;
+    }
+
+    HttpResponse::success_empty("成功更新睡眠狀態")
 }
 
 
@@ -86,6 +92,7 @@ pub async fn user_eat(
         .upsert(true)
         .build();
     let collection = modules.driver.get_database().collection::<UserRoutine>("routine");
+
     let result = collection
         .update_one(doc! {"user_id": user_id.clone()},doc! {
             "$set": {"user_id": user_id.clone(),  "last_eaten": DateTime::now() },

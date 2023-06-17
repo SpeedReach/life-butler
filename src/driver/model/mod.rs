@@ -52,6 +52,14 @@ impl<T> HttpResponse<T>{
             error: Some(OperationErr(Box::new(error)))
         }
     }
+    pub fn fail_empty(title: impl Into<String>) -> Self{
+        Self{
+            title: title.into(),
+            is_success: false,
+            data: None,
+            error: None
+        }
+    }
 }
 
 
