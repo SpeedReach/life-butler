@@ -5,6 +5,7 @@ use bson::DateTime;
 use bson::doc;
 use bson::oid::ObjectId;
 use mongodb::options::UpdateOptions;
+use crate::application::dto::user_routine_dto::UserRoutineDTO;
 use crate::application::use_case::routine;
 use crate::application::use_case::routine::commands::sleep::SleepRequest;
 use crate::application::use_case::task::queries::GetTasksError::DatabaseError;
@@ -48,7 +49,7 @@ pub async fn user_sleep(
 pub async fn get_routine(
     Extension(modules): Extension<Arc<Modules>>,
     Path(user_id): Path<String>
-) -> HttpResponse<UserRoutine> {
+) -> HttpResponse<UserRoutineDTO> {
 
     let collection = modules.driver.get_database().collection::<UserRoutine>("routine");
     let result = collection
@@ -62,11 +63,11 @@ pub async fn get_routine(
                 None => {
                     let routine = UserRoutine::new(user_id);
                     match collection.insert_one(routine.clone(), None).await {
-                        Ok(r) => HttpResponse::success(routine,"success"),
+                        Ok(r) => HttpResponse::success(UserRoutineDTO::from(routine),"success"),
                         Err(e) => HttpResponse::fail("fail", DatabaseError),
                     }
                 }
-                Some(r) => HttpResponse::success(r, "成功取得"),
+                Some(r) => HttpResponse::success(UserRoutineDTO::from(r), "成功取得"),
             }
         }
         Err(e) => {

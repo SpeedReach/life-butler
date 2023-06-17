@@ -1,0 +1,11 @@
+{
+  "title": "成功取得",
+  "is_success": true,
+  "data": {
+    "user_id": "648b42891548ae259386d4ac",
+    "sleeping": false,
+    "last_wakeup": "2023-06-17T16:42:23+08:00",
+    "last_eaten": "2023-06-17T16:40:28+08:00"
+  },
+  "error": null
+}
