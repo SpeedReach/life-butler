@@ -35,6 +35,9 @@ impl CreateEventUseCase{
         if end_time < Utc::now() {
             return Err(Report::new(CreateEventError::AlreadyExpired));
         }
+        if end_time <= start_time {
+            return Err(Report::new(CreateEventError::StartTimeBigger));
+        }
         let event = Event::new(
             request.title,
             request.user_id,

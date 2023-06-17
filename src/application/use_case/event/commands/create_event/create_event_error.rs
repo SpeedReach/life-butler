@@ -10,6 +10,7 @@ pub enum CreateEventError{
     DatabaseError,
     ParsingError(String),
     AlreadyExpired,
+    StartTimeBigger
 }
 
 impl Display for CreateEventError {
@@ -17,7 +18,8 @@ impl Display for CreateEventError {
         match self {
             CreateEventError::DatabaseError => write!(f,"資料庫出錯，請聯絡管理員"),
             CreateEventError::ParsingError(date) => write!(f,"無法將 {} 轉成日期",date),
-            CreateEventError::AlreadyExpired => write!(f,"不能創建已經過期的活動")
+            CreateEventError::AlreadyExpired => write!(f,"不能創建已經過期的活動"),
+            CreateEventError::StartTimeBigger => write!(f,"開始日期必需小於結束日期")
         }
     }
 }
@@ -31,7 +33,8 @@ impl OperationError for CreateEventError{
         match self {
             CreateEventError::DatabaseError => 500,
             CreateEventError::ParsingError(_) => 406,
-            CreateEventError::AlreadyExpired => 406
+            CreateEventError::AlreadyExpired => 406,
+            CreateEventError::StartTimeBigger=>406
         }
     }
 }
